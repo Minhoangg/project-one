@@ -118,7 +118,7 @@ include '../global.php';
                                     include './auth/admin-register.php';
                                     break;
                                 case 'forgot':
-                                    include './auth/admin-forgotpass.php';
+                                    include './auth/admin-forgot.php';
                                     break;
                                 default:
                                     include './auth/admin-login.php';
