@@ -15,9 +15,12 @@ include './component/stylesheet.php';
 
 	<?php
 
-    $pages = "home";
+
 	if (isset($_GET['pages'])) {
-		$pages = $_GET['pages'];
+        $pages = $_GET['pages'];
+    }else{
+        $pages = "home";
+    }
 		switch ($pages) {
 			case 'home':
 				include './page/home.php';
@@ -41,7 +44,7 @@ include './component/stylesheet.php';
 				include './page/home.php';
 				break;
 		}
-	}
+
 	?>
 
 
