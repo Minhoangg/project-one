@@ -14,7 +14,7 @@
                                 <h6>SHOP</h6>
                                 <p class="text-muted mb-0">Quản Lý</p>
                             </div>
-                        </div> <a class="dropdown-item" href="index.php?pages=product&action=list">Danh Sách Sản Phẩm </a> <a class="dropdown-item" href="index.php?pages=account&action=forgot">Quên Mật Khẩu</a><a class="dropdown-item" href="index.php?pages=account&action=login">Đăng Nhập</a>
+                        </div> <a class="dropdown-item" href="index.php?pages=product&action=list">Thông tin người dùng </a> <a class="dropdown-item" href="index.php?pages=account&action=forgot">Quên Mật Khẩu</a><a class="dropdown-item" href="index.php?pages=account&action=login">Đăng Nhập</a>
                     </div>
                 </li>
             </ul>

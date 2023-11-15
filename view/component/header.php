@@ -40,23 +40,23 @@
 					<div class="menu-desktop">
 						<ul class="main-menu">
 							<li>
-								<a href="layout.php?pages=home">Home</a>
+								<a href="index.php?pages=home">Home</a>
 							</li>
 
 							<li class="">
-								<a href="layout.php?pages=shop">Shop</a>
+								<a href="index.php?pages=shop">Shop</a>
 							</li>
 
 							<li>
-								<a href="layout.php?pages=blog">Blog</a>
+								<a href="index.php?pages=blog">Blog</a>
 							</li>
 
 							<li>
-								<a href="layout.php?pages=about">About</a>
+								<a href="index.php?pages=about">About</a>
 							</li>
 
 							<li>
-								<a href="layout.php?pages=contact">Contact</a>
+								<a href="index.php?pages=contact">Contact</a>
 							</li>
 						</ul>
 					</div>
