@@ -26,6 +26,7 @@ include '../global.php';
     include './includes/sitebar.php';
     require_once('../dao/pdo.php');
     require_once('../dao/user.php');
+    require_once('../dao/thongke.php');
     ?>
 
     <div class="page-wrapper" style="padding-top: 70px;">
@@ -35,9 +36,9 @@ include '../global.php';
             if (isset($_GET['pages'])) {
                 $pages = $_GET['pages'];
             }
-            if (!isset($_SESSION['admin'])) {
-                $pages = "login";
-            }
+//            if (!isset($_SESSION['admin'])) {
+//                $pages = "login";
+//            }
 
             switch ($pages) {
                 case 'admin':
@@ -79,9 +80,6 @@ include '../global.php';
                     switch ($_GET['action']) {
                         case 'chart':
                             include './resources/statistical/chart.php';
-                            break;
-                        case 'detail':
-                            include './resources/statistical/statistical.php';
                             break;
                         default:
                             include './resources/statistical/chart.php';

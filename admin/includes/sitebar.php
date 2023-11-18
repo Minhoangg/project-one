@@ -38,8 +38,8 @@
 
 				<li class="submenu"> <a href="#"><i class="fa fa-cubes"></i> <span> Thống Kê</span> <span class="menu-arrow"></span></a>
 					<ul class="submenu_class" style="display: none;">
-						<li><a href="index.php?pages=statis&action=chart"> Thống Kê</a></li>
-						<li><a href="index.php?pages=statis&action=statistical"> Biểu Đồ</a></li>
+                        <li><a href="index.php?pages=statis&action=statistical">Thống Kê</a></li>
+
 					</ul>
 				</li>
 
