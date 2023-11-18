@@ -1,5 +1,7 @@
 <?php
-class user {
+
+class user
+{
 
     function getUser()
     {
@@ -7,21 +9,38 @@ class user {
         $select = "select * from users";
         return $db->pdo_query($select);
     }
-    public function checkUser($username,$password)
+
+    public function checkUser($username, $password)
     {
         $db = new connect();
-        $select="select * from users where UserName='$username' and Password='$password'";
-        $result = $db->pdo_query_one($select);
-        if($result!=null)
-            return true;
-        else
-            return false;
+        $sql = "SELECT * FROM users WHERE name = ? LIMIT 1";
+        $user = $db->pdo_query_one($sql, $username);
+
+        if ($user && password_verify($password, $user['password'])) {
+            return $user;
+        } else {
+            return null;
+        }
     }
 
-    public function userid($username,$password)
+    public function checkPass($id_user, $pass_old)
     {
         $db = new connect();
-        $select="select UserID from users where UserName='$username' and Password='$password'";
+        $sql = "SELECT * FROM users WHERE id = ? LIMIT 1";
+        $user = $db->pdo_query_one($sql, $id_user);
+
+        if ($user && password_verify($pass_old, $user['password'])) {
+            return $user;
+        } else {
+            return null;
+        }
+    }
+
+
+    public function userid($username, $password)
+    {
+        $db = new connect();
+        $select = "select UserID from users where UserName='$username' and Password='$password'";
         $result = $db->pdo_query_one($select);
         return $result;
     }
@@ -42,10 +61,18 @@ class user {
         $db->pdo_execute($query);
     }
 
-    function updateUser($tmpUsername, $tmpPassword, $tmpName, $tmpEmail)
+    public function updateUser($name, $email_user, $adress_user, $number_user, $thumbnail, $id_user)
     {
         $db = new connect();
-        $query = "update users set Password='$tmpPassword',Username='$tmpName',Email='$tmpEmail' where Username='$tmpUsername'";
+        // Đã sửa lỗi dấu phẩy thừa và thêm câu điều kiện WHERE
+        $query = "UPDATE users SET name = '$name', email = '$email_user', address = '$adress_user',thumbnail='$thumbnail', phone_number = '$number_user' WHERE id = '$id_user'";
+        $db->pdo_execute($query);
+    }
+
+    public function updatePass($pass_new_hash, $id_user)
+    {
+        $db = new connect();
+        $query = "UPDATE users SET  password = '$pass_new_hash' WHERE id = '$id_user'";
         $db->pdo_execute($query);
     }
 
@@ -56,4 +83,5 @@ class user {
         $db->pdo_execute($query);
     }
 }
+
 ?>
