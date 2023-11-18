@@ -1,0 +1,15 @@
+.form-toggle-pass{
+    position: relative;
+}
+
+.form-toggle-pass span{
+    position: absolute;
+    top: 50%;
+    right: 15px;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+    color: rgba(0, 0, 0, 0.3);
+    font-size: 18px;
+}
+

@@ -15,21 +15,29 @@ include '../global.php';
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
           integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
           crossorigin="anonymous" referrerpolicy="no-referrer"/>
-    <link rel="stylesheet" href="../content/contentAdmin/css/feathericon.min.css">
-    <link rel="stylesheet" href="../content/contentAdmin/css/style.css">
+
+    <link rel="stylesheet" href="<?= $CONTENT_URL ?>/contentAdmin/css/feathericon.min.css">
+    <link rel="stylesheet" href="<?= $CONTENT_URL ?>/contentAdmin/css/style.css">
+    <link rel="stylesheet" href="<?= $CONTENT_URL ?>/contentAdmin/css/from.css">
+
 </head>
 
 <body>
 <div class="main-wrapper">
+
+
     <?php
     include './includes/header.php';
     include './includes/sitebar.php';
     require_once('../dao/pdo.php');
     require_once('../dao/user.php');
+    require_once('../dao/thongke.php');
     ?>
 
     <div class="page-wrapper" style="padding-top: 70px;">
+
         <div class="content container-fluid">
+
             <?php
             $pages = 'admin';
             if (isset($_GET['pages'])) {
@@ -80,9 +88,6 @@ include '../global.php';
                         case 'chart':
                             include './resources/statistical/chart.php';
                             break;
-                        case 'detail':
-                            include './resources/statistical/statistical.php';
-                            break;
                         default:
                             include './resources/statistical/chart.php';
                             break;
@@ -129,7 +134,7 @@ include '../global.php';
                             include './auth/admin-forgot.php';
                             break;
                         default:
-                            include './auth/admin-login.php';
+                            include './auth/admin-logout.php';
                             break;
                     }
                     break;
@@ -155,11 +160,33 @@ include '../global.php';
     </div>
 </div>
 
+<!--toogle password -->
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const togglePassword = document.querySelectorAll('.toggle-password');
+
+        togglePassword.forEach(function (element) {
+            element.addEventListener('click', function () {
+                const target = document.querySelector(this.getAttribute('toggle'));
+                this.classList.toggle('fa-eye-slash');
+
+                if (target.type === 'password') {
+                    target.type = 'text';
+                } else {
+                    target.type = 'password';
+                }
+            });
+        });
+    });
+</script>
+<!-- end toogle password -->
+
 <script src="../content/contentAdmin/js/jquery-3.5.1.min.js"></script>
 <script src="../content/contentAdmin/js/popper.min.js"></script>
 <script src="../content/contentAdmin/js/bootstrap.min.js"></script>
 <script src="../content/contentAdmin/plugins/slimscroll/jquery.slimscroll.min.js"></script>
 <script src="../content/contentAdmin/js/script.js"></script>
+
 </body>
 
 </html>
