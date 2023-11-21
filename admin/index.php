@@ -43,9 +43,9 @@ include '../global.php';
             if (isset($_GET['pages'])) {
                 $pages = $_GET['pages'];
             }
-            if (!isset($_SESSION['admin'])) {
-                $pages = "login";
-            }
+//            if (!isset($_SESSION['admin'])) {
+//                $pages = "login";
+//            }
 
             switch ($pages) {
                 case 'admin':
