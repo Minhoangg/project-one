@@ -34,6 +34,7 @@ include '../global.php';
     require_once('../dao/user.php');
     require_once('../dao/thongke.php');
     require_once('../dao/caterories.php');
+    require_once('../dao/comment.php');
     ?>
 
     <div class="page-wrapper" style="padding-top: 70px;">
@@ -122,6 +123,9 @@ include '../global.php';
                             break;
                         case 'chart':
                             include './resources/statistical/chart.php';
+                            break;
+                        case 'delete':
+                            include './resources/user/delete.php';
                             break;
                         default:
                             include './resources/statistical/statistical.php';
