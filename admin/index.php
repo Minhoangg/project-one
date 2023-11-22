@@ -32,6 +32,7 @@ include '../global.php';
     require_once('../dao/pdo.php');
     require_once('../dao/user.php');
     require_once('../dao/thongke.php');
+    require_once('../dao/caterories.php');
     ?>
 
     <div class="page-wrapper" style="padding-top: 70px;">
@@ -77,6 +78,9 @@ include '../global.php';
                             break;
                         case 'edit':
                             include './resources/category/category_edit.php';
+                            break;
+                        case 'delete':
+                            include './resources/category/category_delete.php';
                             break;
                         default:
                             include './resources/category/category_list.php';

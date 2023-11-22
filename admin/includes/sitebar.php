@@ -16,7 +16,6 @@
 				<li class="submenu"> <a href="#"><i class="fa fa-th-list"></i> <span> Danh Mục</span> <span class="menu-arrow"></span></a>
 					<ul class="submenu_class" style="display: none;">
 						<li><a href="index.php?pages=category&action=list"> Danh Sách Danh Mục</a></li>
-						<li><a href="index.php?pages=category&action=edit"> Sửa Danh Sách Danh Mục</a></li>
 						<li><a href="index.php?pages=category&action=add"> Thêm Danh Sách Danh Mục </a></li>
 					</ul>
 				</li>

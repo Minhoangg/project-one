@@ -1,1 +1,52 @@
-<h1>cate edit</h1>
+<?php
+$cata = new caterories();
+if (!isset($_GET['id'])) {
+    //code trang 404
+
+}
+$id = $_GET['id'];
+$getOneTB =$cata->caterories_select_by_id($id);
+//kiểm tra người dùng có click vào nút add hay không
+if (isset($_POST['capnhatlh'])) {
+    $name = $_POST['name'];
+    $id = $_POST['malh'];
+    $cata->caterories_update($name,$id);
+    header('location:http://qa.com/admin/index.php?pages=category&action=list');
+}
+?>
+<div class="container mt-5" >
+    <div class="row ">
+        <div class="card mx-auto col-11" >
+            <div class="card-header text-center bg-dark text-white text-uppercase">Cập nhật loại hàng</div>
+            <div class="card-body">
+                <form action="" method="POST"id="admin_update_kh">
+                    <div class="row">
+                        <div class="form-group col-sm-6">
+                            <label for="malh" class="form-label">MÃ LOẠI HÀNG </label>
+                            <input type="text" name="malh" id="malh" class="form-control" required
+                                   value="<?= $getOneTB['id'] ?? ''; ?>">
+                        </div>
+                        <div class="form-group col-sm-6">
+                            <label for="name" class="form-label">TÊN LOẠI HÀNG</label>
+                            <input type="text" name="name" id="name" class="form-control" required
+                                   value="<?= $getOneTB['name'] ?? ''; ?>">
+                        </div>
+                    </div>
+                    <div class="row m-3 ">
+                        <div class="col text-center">
+                            <a href=""></a>
+                            <input class="btn btn-primary" type="submit" name="capnhatlh" value="cập nhật">
+                            <a href=""><input class="btn btn-primary" type="reset" value="Nhập Lại"></a>
+                            <a href="index.php?pages=category&action=list">
+                                <input class="btn btn-primary" type="button" value="Danh Sách">
+                            </a>
+                        </div>
+
+                    </div>
+
+
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
