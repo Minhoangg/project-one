@@ -82,6 +82,9 @@ include '../global.php';
                             case 'edit':
                                 include './resources/category/category_edit.php';
                                 break;
+                            case 'delete':
+                                include './resources/category/category_delete.php';
+                                break;
                             default:
                                 include './resources/category/category_list.php';
                                 break;

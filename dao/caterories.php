@@ -1,5 +1,5 @@
 <?php
-class Caterories{
+class caterories{
 
     function caterories_insert($name)
     {
