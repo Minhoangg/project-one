@@ -75,7 +75,7 @@ class user {
         $db->pdo_execute($query);
     }
 
-    public function updateuser($name, $email_user, $adress_user, $number_user, $thumbnail, $id_user)
+    public function update_user($name, $email_user, $adress_user, $number_user, $thumbnail, $id_user)
     {
         $db = new connect();
         $query = "UPDATE users SET name = '$name', email = '$email_user', address = '$adress_user',thumbnail='$thumbnail', phone_number = '$number_user' WHERE id = '$id_user'";

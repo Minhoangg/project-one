@@ -135,6 +135,9 @@ include '../global.php';
                             case 'forgot':
                                 include './auth/admin-forgot.php';
                                 break;
+                            case 'logout':
+                                include './auth/admin-logout.php';
+                                break;
                             default:
                                 include './auth/admin-login.php';
                                 break;
