@@ -17,7 +17,7 @@ if (isset($_POST['btn_edit_info'])) {
 
     $user = new user();
 
-    $user->updateUser($name, $email_user, $adress_user, $number_user, $thumbnail, $id_user);
+    $user->update_user($name, $email_user, $adress_user, $number_user, $thumbnail, $id_user);
 
     if (isset($_SESSION['admin'])) {
         $_SESSION['admin']['name'] = $name;
