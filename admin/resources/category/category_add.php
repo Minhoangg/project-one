@@ -1,6 +1,6 @@
 <div class="col-lg-6 m-auto">
             <div class="card">
-                <div class="card-header text-center bg-dark text-white text-uppercase">Thêm mới loại hàng</div>
+                <div class="card-header text-center bg-dark text-white text-uppercase">Thêm Mới Danh Mục</div>
                 <div class="card-body">
                     <form action="index.php" method="POST" id="add_loai" onsubmit="return validateForm()">
                         <div class="mb-3">
