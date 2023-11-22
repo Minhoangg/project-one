@@ -15,7 +15,7 @@ $product = new Products();
                         <a href="index.php?pages=product&action=add" class="btn btn-success text-white mb-2">Thêm mới
                         <i class="fas fa-plus-circle"></i>
                     </a>
-                    <table width="100%" class="table table-hover table-bordered text-center">
+                    <table width="100%" class="table table-hover table-bordered text-center ">
                         <thead class="bg-dark">
                             <tr class="text-white">
                                 <th>Tên hàng hóa</th>

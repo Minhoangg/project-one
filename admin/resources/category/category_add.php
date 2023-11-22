@@ -3,7 +3,7 @@ if(isset($_POST['btn_insert'])&& ($_POST['ten_loai'] !="")){
     $name= $_POST['ten_loai'];
     $cata = new caterories();
     $cata->caterories_insert($name);
-    header('location:http://qa.com/admin/index.php?pages=category&action=list');
+    header('location:index.php?pages=category&action=list');
 }
 
 ?>

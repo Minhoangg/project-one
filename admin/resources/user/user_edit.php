@@ -86,7 +86,7 @@ if (isset($_GET['id'])) {
             <div class="mb-3 text-center mt-3">
                 <input type="hidden" name="ma_kh" value="<?= $ma_kh ?>">
                 <button type="submit" name="btn_update" value="Cập nhật" class="btn btn-primary mr-3 p-2">Cập Nhật</button>
-                <a href="index.php?btn_list"><input type="button" class="btn btn-success" value="Danh sách"></a>
+                <a href="index.php?pages=user&action=list"><input type="button" class="btn btn-success" value="Danh sách"></a>
             </div>
 
             </form>

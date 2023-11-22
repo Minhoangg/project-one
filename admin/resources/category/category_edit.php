@@ -11,7 +11,7 @@ if (isset($_POST['capnhatlh'])) {
     $name = $_POST['name'];
     $id = $_POST['malh'];
     $cata->caterories_update($name,$id);
-    header('location:http://qa.com/admin/index.php?pages=category&action=list');
+    header('location:index.php?pages=category&action=list');
 }
 ?>
 <div class="container mt-5" >

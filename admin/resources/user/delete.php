@@ -35,7 +35,7 @@ $user = new user();
 if (isset($_POST["delete"])) {
 $id=$_GET['id'];
 $user -> deleteUser($id); 
-header('Location: http://duan/admin/index.php?pages=user&action=list');
+header('Location: index.php?pages=user&action=list');
 }
 ?>
 <?php ob_end_flush(); ?>

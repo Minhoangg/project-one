@@ -10,16 +10,15 @@ $dslh = $cata->caterories_select_all_desc();
         <h4 class="mt-5 font-weight-bold text-center">Danh sách Danh Mục </h4>
     </div>
     <div class="row">
-        <div class="cart mx-auto">
+        <div class="cart mx-auto col-12">
             <form action="?btn_delete_all" method="post" class="table-responsive">
                 <a href="index.php?pages=category&action=add" class="btn btn-success text-white mb-2">Thêm mới
                     <i class="fas fa-plus-circle"></i></a>
                 <?php
                 if (!empty($dslh)):
-
                 ?>
 
-                <table width="100%" class="table table-hover table-bordered text-center">
+                <table  class="table table-hover table-bordered text-center ">
                     <thead class="bg-dark">
                         <tr class="text-white">
                             <th>Mã Loại</th>

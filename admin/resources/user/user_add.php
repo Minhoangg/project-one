@@ -101,7 +101,7 @@ if (isset($_POST['btn_insert'])) {
                     </div>
                     <div class="mb-3 text-center mt-3">
                         <input type="submit" name="btn_insert" value="Thêm mới" class="btn btn-primary mr-3">
-                        <a href="index.php?btn_list"><input type="button" class="btn btn-success" value="Danh sách"></a>
+                        <a href="index.php?pages=user&action=list"><input type="button" class="btn btn-success" value="Danh sách"></a>
                     </div>
 
                 </form>
