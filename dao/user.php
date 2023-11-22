@@ -1,7 +1,5 @@
 <?php
-
-class user
-{
+class user {
 
     function getUser()
     {
@@ -22,6 +20,11 @@ class user
             return null;
         }
     }
+    function khach_hang_insert($name,$email,$password_hash,$thumbnail,$confirm_password, $role,$phone_number,$address){
+        $db = new connect();
+        $query = "INSERT INTO users(name,email,password,thumbnail,confirm_password, role,phone_number,address) VALUES ( ?, ?, ?, ?, ?, ?,?,?)";
+        $db->pdo_execute($query,$name,$email,$password_hash,$thumbnail,$confirm_password, $role,$phone_number,$address);
+    }
 
     public function checkPass($id_user, $pass_old)
     {
@@ -36,39 +39,6 @@ class user
         }
     }
 
-
-    public function userid($username, $password)
-    {
-        $db = new connect();
-        $select = "select UserID from users where UserName='$username' and Password='$password'";
-        $result = $db->pdo_query_one($select);
-        return $result;
-    }
-
-    public function getInfoById($username)
-    {
-        $db = new connect();
-        $select = "select * from users where Username='$username'";
-        $result = $db->pdo_query($select);
-        //   $quest = $result->fetch();
-        return $result;
-    }
-
-    function insertUser($tmpUsername, $tmpPassword, $tmpName, $tmpEmail, $tmpPermisions, $tmpPhone)
-    {
-        $db = new connect();
-        $query = "INSERT INTO users(UserID,Username,Password,FullName,Email ,Permissions, Avatar,Address,Phone) VALUES (NULL,'$tmpUsername','$tmpPassword','$tmpName','$tmpEmail','$tmpPermisions','','',$tmpPhone)";
-        $db->pdo_execute($query);
-    }
-
-    public function updateUser($name, $email_user, $adress_user, $number_user, $thumbnail, $id_user)
-    {
-        $db = new connect();
-        // Đã sửa lỗi dấu phẩy thừa và thêm câu điều kiện WHERE
-        $query = "UPDATE users SET name = '$name', email = '$email_user', address = '$adress_user',thumbnail='$thumbnail', phone_number = '$number_user' WHERE id = '$id_user'";
-        $db->pdo_execute($query);
-    }
-
     public function updatePass($pass_new_hash, $id_user)
     {
         $db = new connect();
@@ -76,12 +46,40 @@ class user
         $db->pdo_execute($query);
     }
 
+    public function selectByID($iduser)
+    {
+        $db = new connect();
+        $select = "select * from users where id='$iduser'";
+        $result = $db->pdo_query_one($select);
+        return $result;
+    }
+
     function deleteUser($id)
     {
         $db = new connect();
-        $query = "delete from users where UserName = '$id'";
+        $query = "delete from users where id = '$id'";
+        $db->pdo_execute($query);
+    }
+
+    function updateUser($id,$name, $email, $password, $thumbnaill,$confirm_password,$role,$phone, $address)
+    {
+        $db = new connect();
+        $query = "UPDATE `users` SET `name`='$name',`email`='$email',`password`='$password',`thumbnail`='$thumbnaill',`confirm_password`='$confirm_password',`role`='$role',`phone_number`='$phone',`address`='$address' WHERE id=$id";
+        $db->pdo_execute($query);
+    }
+
+    function insertUser($name, $email, $password,$thumbnail,$confirm_password,$role, $phone, $address)
+    {
+        $db = new connect();
+        $query = "INSERT INTO users(name,email,password,phone_number,address,role,thumbnail) VALUES ($name, $email, $password,$thumbnail,$confirm_password,$role,$phone,$address)";
+        $db->pdo_execute($query);
+    }
+
+    public function updateuser($name, $email_user, $adress_user, $number_user, $thumbnail, $id_user)
+    {
+        $db = new connect();
+        $query = "UPDATE users SET name = '$name', email = '$email_user', address = '$adress_user',thumbnail='$thumbnail', phone_number = '$number_user' WHERE id = '$id_user'";
         $db->pdo_execute($query);
     }
 }
-
 ?>

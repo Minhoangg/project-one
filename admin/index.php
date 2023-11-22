@@ -23,16 +23,15 @@ include '../global.php';
 </head>
 
 <body>
-<div class="main-wrapper">
-
-
-    <?php
-    include './includes/header.php';
-    include './includes/sitebar.php';
-    require_once('../dao/pdo.php');
-    require_once('../dao/user.php');
-    require_once('../dao/thongke.php');
-    ?>
+    <div class="main-wrapper">
+        <?php
+        include './includes/header.php';
+        include './includes/sitebar.php';
+        require_once('../dao/pdo.php');
+        require_once('../dao/user.php');
+        require_once('../dao/thongke.php');
+        require_once('../dao/comment.php');
+        ?>
 
     <div class="page-wrapper" style="padding-top: 70px;">
 
@@ -47,118 +46,124 @@ include '../global.php';
                 $pages = "login";
             }
 
-            switch ($pages) {
-                case 'admin':
-                    include './resources/dashboard/dashboard.php';
-                    break;
-                case 'product':
-                    switch ($_GET['action']) {
-                        case 'list':
-                            include './resources/product/product_list.php';
-                            break;
-                        case 'add':
-                            include './resources/product/product_add.php';
-                            break;
-                        case 'edit':
-                            include './resources/product/product_edit.php';
-                            break;
-                        default:
-                            include './resources/product/product_list.php';
-                            break;
-                    }
-                    break;
-                case 'category':
-                    switch ($_GET['action']) {
-                        case 'list':
-                            include './resources/category/category_list.php';
-                            break;
-                        case 'add':
-                            include './resources/category/category_add.php';
-                            break;
-                        case 'edit':
-                            include './resources/category/category_edit.php';
-                            break;
-                        default:
-                            include './resources/category/category_list.php';
-                            break;
-                    }
-                    break;
-                case 'statistical':
-                    switch ($_GET['action']) {
-                        case 'chart':
-                            include './resources/statistical/chart.php';
-                            break;
-                        default:
-                            include './resources/statistical/chart.php';
-                            break;
-                    }
-                    break;
-                case 'user':
-                    switch ($_GET['action']) {
-                        case 'list':
-                            include './resources/user/user_list.php';
-                            break;
-                        case 'add':
-                            include './resources/user/user_add.php';
-                            break;
-                        case 'edit':
-                            include './resources/user/user_edit.php';
-                            break;
-                        default:
-                            include './resources/user/user_list.php';
-                            break;
-                    }
-                    break;
-                case 'statis':
-                    switch ($_GET['action']) {
-                        case 'list':
-                            include './resources/statistical/statistical.php';
-                            break;
-                        case 'chart':
-                            include './resources/statistical/chart.php';
-                            break;
-                        default:
-                            include './resources/statistical/statistical.php';
-                            break;
-                    }
-                    break;
-                case 'account':
-                    switch ($_GET['action']) {
-                        case 'info':
-                            include './auth/admin-info.php';
-                            break;
-                        case 'register':
-                            include './auth/admin-register.php';
-                            break;
-                        case 'forgot':
-                            include './auth/admin-forgot.php';
-                            break;
-                        default:
-                            include './auth/admin-logout.php';
-                            break;
-                    }
-                    break;
-                case 'comments':
-                    switch ($_GET['action']) {
-                        case 'list':
-                            include './resources/comment/comment_list.php';
-                            break;
-                        case 'detail':
-                            include './resources/comment/comment_detail.php';
-                            break;
-                        default:
-                            include './index.php';
-                            break;
-                    }
-                    break;
-                case 'login':
-                    header('location: ./auth/admin-login.php');
-                    break;
-            }
-            ?>
+                switch ($pages) {
+                    case 'admin':
+                        include './resources/dashboard/dashboard.php';
+                        break;
+                    case 'product':
+                        switch ($_GET['action']) {
+                            case 'list':
+                                include './resources/product/product_list.php';
+                                break;
+                            case 'add':
+                                include './resources/product/product_add.php';
+                                break;
+                            case 'edit':
+                                include './resources/product/product_edit.php';
+                                break;
+                            default:
+                                include './resources/product/product_list.php';
+                                break;
+                        }
+                        break;
+                    case 'category':
+                        switch ($_GET['action']) {
+                            case 'list':
+                                include './resources/category/category_list.php';
+                                break;
+                            case 'add':
+                                include './resources/category/category_add.php';
+                                break;
+                            case 'edit':
+                                include './resources/category/category_edit.php';
+                                break;
+                            default:
+                                include './resources/category/category_list.php';
+                                break;
+                        }
+                        break;
+                    case 'statistical':
+                        switch ($_GET['action']) {
+                            case 'chart':
+                                include './resources/statistical/chart.php';
+                                break;
+                            default:
+                                include './resources/statistical/chart.php';
+                                break;
+                        }
+                        break;
+                    case 'user':
+                        switch ($_GET['action']) {
+                            case 'list':
+                                include './resources/user/user_list.php';
+                                break;
+                            case 'add':
+                                include './resources/user/user_add.php';
+                                break;
+                            case 'edit':
+                                include './resources/user/user_edit.php';
+                                break;
+                            case 'delete':
+                                include './resources/user/delete.php';
+                                break;
+                            default:
+                                include './resources/user/user_list.php';
+                                break;
+                        }
+                        break;
+                    case 'statis':
+                        switch ($_GET['action']) {
+                            case 'list':
+                                include './resources/statistical/statistical.php';
+                                break;
+                            case 'chart':
+                                include './resources/statistical/chart.php';
+                                break;
+                            default:
+                                include './resources/statistical/statistical.php';
+                                break;
+                        }
+                        break;
+                    case 'account':
+                        switch ($_GET['action']) {
+                            case 'info':
+                                include './auth/admin-info.php';
+                                break;
+                            case 'register':
+                                include './auth/admin-register.php';
+                                break;
+                            case 'forgot':
+                                include './auth/admin-forgot.php';
+                                break;
+                            default:
+                                include './auth/admin-login.php';
+                                break;
+                        }
+                        break;
+                    case 'comments':
+                        switch ($_GET['action']) {
+                            case 'list':
+                                include './resources/comment/comment_list.php';
+                                break;
+                            case 'detail':
+                                include './resources/comment/comment_detail.php';
+                                break;
+                            case 'delete':
+                                include './resources/comment/delete.php';
+                                break;
+                            default:
+                                include './resources/comment/comment_list.php';
+                                break;
+                        }
+                        break;
+                    case 'login':
+                        header('location: ./auth/admin-login.php');
+                        break;
+                }
+                ?>
+            </div>
         </div>
     </div>
-</div>
 
 <!--toogle password -->
 <script>

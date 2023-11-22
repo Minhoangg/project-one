@@ -53,7 +53,7 @@ $data = new thongke();
             else:
                 ?>
                 <div class="card-body">
-                    dang cap nhat du lieu
+                    Đang cập nhật dữ liệu...
                 </div>
             <?php
             endif;
