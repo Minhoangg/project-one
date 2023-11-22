@@ -3,7 +3,7 @@
         <h4 class="mt-5 font-weight-bold text-center">Danh sách bình luận</h4>
     </div>
     <div class="row col-sm-10 mx-auto">
-        <div class="box-body mx-auto">
+        <div class="box-body col-12">
             <table width="100%" class="table table-hover table-bordered text-center">
                 <thead>
                     <tr class="bg-dark text-white">

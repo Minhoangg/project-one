@@ -1,60 +1,70 @@
+<?php
+
+$cata = new caterories();
+$dslh = $cata->caterories_select_all_desc();
+
+
+?>
 <div class="container">
     <div class="page-title">
         <h4 class="mt-5 font-weight-bold text-center">Danh sách Danh Mục </h4>
     </div>
     <div class="row">
-        <div class="cart mx-auto">
+        <div class="cart col-12">
             <form action="?btn_delete_all" method="post" class="table-responsive">
-                <a href="index.php" class="btn btn-success text-white mb-2">Thêm mới
+                <a href="index.php?pages=category&action=add" class="btn btn-success text-white mb-2">Thêm mới
                     <i class="fas fa-plus-circle"></i></a>
-                <table width="100%" class="table table-hover table-bordered text-center">
-                    <thead class="bg-dark">
-                        <tr class="text-white">
-                            <th>Tên hàng hóa</th>
-                            <th>Ảnh</th>
-                            <th>Đơn giá</th>
-                            <th>Giảm giá</th>
-                            <th>Lượt xem</th>
-                            <th>Ngày nhập</th>
-                            <th>Đặc biệt</th>
-                            <th>Tác vụ</th>
-                        </tr>
-                    </thead>
-                    <tbody></tbody>
-                        <tr class="mx-auto">
+                <?php
+                if (!empty($dslh)):
 
-                            <td>
-                                
-                            </td>
-                            <td>
-                               
-                            </td>
-                            <td>
-                               đ
-                            </td>
-                            <td>
-                                đ
-                            </td>
-                            <td>
-                               
-                            </td>
-                            <td>
-                                
-                            </td>
-                            <td>
-                               
-                            </td>
-
-                            <td class="text-end d-flex justify-content-around">
-                                <a href="" class="btn btn-outline-info btn-rounded"><i class="fas fa-pen"></i></a>
-                                <a href="" class="btn btn-outline-danger btn-rounded" onclick="return checkDelete()"><i class="fas fa-trash"></i></a>
-                            </td>
-                        </tr>
-                    <?php
-                    
                     ?>
-                    </tbody>
-                </table>
+
+                    <table  class="table table-hover table-bordered text-center col-12">
+                        <thead class="bg-dark">
+                        <tr class="text-white">
+                            <th>Mã Loại</th>
+                            <th>Tên Loại</th>
+                            <th>Tác Vụ</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <?php foreach ($dslh as $lh): ?>
+                            <tr>
+                                <td>
+                                    <?= $lh['id'] ?>
+                                </td>
+
+                                <td>
+                                    <?= $lh['name'] ?>
+                                </td>
+                                <td>
+                                    <div class="m-3">
+                                        <a href="index.php?pages=category&action=edit&id=<?= $lh['id'] ?>"
+                                           class="btn btn-primary">Sửa</a>
+
+                                        <a href="index.php?pages=category&action=delete&id=<?= $lh['id'] ?>"
+                                           class="btn btn-danger">Xóa</a>
+                                    </div>
+                                </td>
+
+
+                            </tr>
+                        <?php
+                        endforeach;
+                        ?>
+
+                        </tbody>
+
+                    </table>
+                <?php
+                else:
+                    ?>
+                    <div class="card-body">
+                        dang cap nhat du lieu
+                    </div>
+                <?php
+                endif;
+                ?>
 
 
             </form>
