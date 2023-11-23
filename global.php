@@ -10,7 +10,7 @@ $SL_PER_PAGE = 10;
 
 //Định nghĩa đường dẫn chứa ảnh trong upload
 
-$UPLOAD_URL = "../../uploaded/";
+$UPLOAD_URL = "../uploaded";
 
 $img_path = "$ROOT_URL/products/";
 

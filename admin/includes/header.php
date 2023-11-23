@@ -1,6 +1,6 @@
 <div class="header">
             <div class="header-left">
-                <a href="" class="logo"> <img src="../../content/contentAdmin/img/hotel_logo.png" width="50" height="70" alt="logo"> <span class="logoclass">Quần Áo</span> </a>
+                <a href="" class="logo"> <img src="../../content/contentAdmin/img/hotel_logo.png" width="50" height="70" alt="logo"> <span class="logoclass">CLOTHES</span> </a>
                 <a href="" class="logo logo-small"> <img src="../../content/contentAdmin/img/logo.png" alt="Logo" width="30" height="30"> </a>
             </div>
             <a href="javascript:void(0);" id="toggle_btn"> <i class="fa-solid fa-bars"></i></a>

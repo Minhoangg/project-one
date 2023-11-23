@@ -8,8 +8,8 @@
 				<li class="submenu"> <a href="index.php?pages=admin"><i class="fa fa-gift"></i> <span> Sản Phẩm </span> <span class="menu-arrow"></span></a>
 					<ul class="submenu_class" style="display: none;">
 						<li><a href="index.php?pages=product&action=list"> Danh Sách Sản Phẩm </a></li>
-						<li><a href="index.php?pages=product&action=edit"> Sửa Danh Sách Sản Phẩm </a></li>
-						<li><a href="index.php?pages=product&action=add"> Thêm Danh Sách Sản Phẩm </a></li>
+						
+						<li><a href="index.php?pages=product&action=add"> Thêm Sản Phẩm </a></li>
 					</ul>
 				</li>
 
