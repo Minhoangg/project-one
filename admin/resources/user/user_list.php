@@ -19,7 +19,7 @@ $user = new user();
                                 <th>Vai trò</th>
                                 <th>Số điện thoại</th>
                                 <th>Địa chỉ khách hàng</th>
-                                <th><a href="index.php" class="btn btn-success text-white">Thêm mới
+                                <th><a href="index.php?pages=user&action=add" class="btn btn-success text-white">Thêm mới
                                         <i class="fas fa-plus-circle"></i></a></th>
                             </tr>
                         </thead>

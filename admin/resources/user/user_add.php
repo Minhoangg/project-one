@@ -33,10 +33,10 @@ if (isset($_POST['btn_insert'])) {
     if ($password != $confirm_password) {
         $loi = 'Nhập lại mật khẩu không đúng';
     }
-     if(!isset($loiten)&& !isset($loiemail)&& !isset($loisdt) && !isset($loidiachi) && !isset($loimatkhau)&& !isset($loinhaplai)){
-     $user-> khach_hang_insert($name,$email,$password_hash,$thumbnail,$confirm_password, $role,$phone_number,$address);
-     
-     } 
+    if(!isset($loiten)&& !isset($loiemail)&& !isset($loisdt) && !isset($loidiachi) && !isset($loimatkhau)&& !isset($loinhaplai)){
+        $user-> khach_hang_insert($name,$email,$password_hash,$thumbnail,$confirm_password, $role,$phone_number,$address);
+
+    }
 }
 ?>
 <div class="row">
