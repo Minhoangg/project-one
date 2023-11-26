@@ -2,6 +2,7 @@
 $cata = new caterories();
 if (!isset($_GET['id'])) {
     //code trang 404
+
 }
 $id = $_GET['id'];
 $getOneTB =$cata->caterories_select_by_id($id);
