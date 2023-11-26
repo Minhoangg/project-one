@@ -17,7 +17,7 @@ include './view/component/header.php';
 
 if (isset($_GET['pages'])) {
     $pages = $_GET['pages'];
-}else{
+} else {
     $pages = "home";
 }
 switch ($pages) {
@@ -38,6 +38,9 @@ switch ($pages) {
         break;
     case 'cart':
         include './view/page/cart.php';
+        break;
+    case 'login':
+        include './view/page/login.php';
         break;
     default:
         include './view/page/home.php';
@@ -143,7 +146,6 @@ include './view/page/product-detail.php';
             swal(nameProduct, "is added to cart !", "success");
         });
     });
-
 </script>
 <!--===============================================================================================-->
 <script src="./content/contentCilent/vendor/perfect-scrollbar/perfect-scrollbar.min.js"></script>

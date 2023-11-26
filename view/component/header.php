@@ -2,31 +2,7 @@
 		<!-- Header desktop -->
 		<div class="container-menu-desktop">
 			<!-- Topbar -->
-			<div class="top-bar">
-				<div class="content-topbar flex-sb-m h-full container">
-					<div class="left-top-bar">
-						Free shipping for standard order over $100
-					</div>
 
-					<div class="right-top-bar flex-w h-full">
-						<a href="#" class="flex-c-m trans-04 p-lr-25">
-							Help & FAQs
-						</a>
-
-						<a href="#" class="flex-c-m trans-04 p-lr-25">
-							My Account
-						</a>
-
-						<a href="#" class="flex-c-m trans-04 p-lr-25">
-							EN
-						</a>
-
-						<a href="#" class="flex-c-m trans-04 p-lr-25">
-							USD
-						</a>
-					</div>
-				</div>
-			</div>
 
 			<div class="wrap-menu-desktop how-shadow1">
 				<nav class="limiter-menu-desktop container">
@@ -40,23 +16,23 @@
 					<div class="menu-desktop">
 						<ul class="main-menu">
 							<li>
-								<a href="index.php?pages=home">Home</a>
+								<a href="index.php?pages=home">Trang chủ</a>
 							</li>
 
 							<li class="">
-								<a href="index.php?pages=shop">Shop</a>
+								<a href="index.php?pages=shop">Sản phẩm</a>
 							</li>
 
 							<li>
-								<a href="index.php?pages=blog">Blog</a>
+								<a href="index.php?pages=blog">Bài viết</a>
 							</li>
 
 							<li>
-								<a href="index.php?pages=about">About</a>
+								<a href="index.php?pages=about">Giới thiệu</a>
 							</li>
 
 							<li>
-								<a href="index.php?pages=contact">Contact</a>
+								<a href="index.php?pages=contact">Liên hệ</a>
 							</li>
 						</ul>
 					</div>
@@ -68,11 +44,11 @@
 						</div>
 
 						<div class="icon-header-item cl2 hov-cl1 trans-04 p-l-22 p-r-11 " >
-							<a href="layout.php?pages=cart" class="zmdi zmdi-shopping-cart text-dark "></a>
+							<a href="index.php?pages=cart" class="zmdi zmdi-shopping-cart text-dark "></a>
 						</div>
 
-						<a href="#" class="icon-header-item cl2 hov-cl1 trans-04 p-l-22 p-r-11 " >
-							<i class="zmdi zmdi-favorite-outline"></i>
+						<a href="index.php?pages=login" class="icon-header-item cl2 hov-cl1 trans-04 p-l-22 p-r-11 " >
+                            <i class="fa fa-user" aria-hidden="true"></i>
 						</a>
 					</div>
 				</nav>
@@ -142,26 +118,26 @@
 
 			<ul class="main-menu-m">
 				<li>
-					<a href="index.html">Home</a>
+					<a href="index.html">Trang chủ</a>
 					<span class="arrow-main-menu-m">
 						<i class="fa fa-angle-right" aria-hidden="true"></i>
 					</span>
 				</li>
 
 				<li>
-					<a href="product.html">Shop</a>
+					<a href="product.html">Sản phẩm</a>
 				</li>
 
 				<li>
-					<a href="blog.html">Blog</a>
+					<a href="blog.html">Bài viết</a>
 				</li>
 
 				<li>
-					<a href="about.html">About</a>
+					<a href="about.html">Giới thiệu</a>
 				</li>
 
 				<li>
-					<a href="contact.html">Contact</a>
+					<a href="contact.html">Liên hệ</a>
 				</li>
 			</ul>
 		</div>

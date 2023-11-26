@@ -15,20 +15,20 @@ if (isset($_POST['capnhatlh'])) {
 }
 ?>
 <div class="container mt-5" >
-    <div class="row ">
-        <div class="card mx-auto col-11" >
-            <div class="card-header text-center bg-dark text-white text-uppercase">Cập nhật loại hàng</div>
+    <div class="row">
+        <div class="card mx-auto col-12 px-0">
+            <div class="card-header text-center bg-success-light text-white text-uppercase">Cập nhật loại hàng</div>
             <div class="card-body">
                 <form action="" method="POST"id="admin_update_kh">
                     <div class="row">
                         <div class="form-group col-sm-6">
                             <label for="malh" class="form-label">MÃ LOẠI HÀNG </label>
-                            <input type="text" name="malh" id="malh" class="form-control" required
-                                   value="<?= $getOneTB['id'] ?? ''; ?>">
+                            <input type="text" name="malh" id="malh" class="form-control"
+                                   value="<?= $getOneTB['id'] ?? ''; ?>" disabled>
                         </div>
                         <div class="form-group col-sm-6">
                             <label for="name" class="form-label">TÊN LOẠI HÀNG</label>
-                            <input type="text" name="name" id="name" class="form-control" required
+                            <input type="text" name="name" id="name" class="form-control"
                                    value="<?= $getOneTB['name'] ?? ''; ?>">
                         </div>
                     </div>

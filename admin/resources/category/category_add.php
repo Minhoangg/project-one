@@ -1,16 +1,23 @@
 <?php
-if(isset($_POST['btn_insert'])&& ($_POST['ten_loai'] !="")){
+if(isset($_POST['btn_insert'])){
     $name= $_POST['ten_loai'];
-    $cata = new caterories();
-    $cata->caterories_insert($name);
-    header('location:index.php?pages=category&action=list');
+    if(empty($name)){
+        $error = "Không được để trống";
+    }
+    if(!isset($error)){
+        $cata = new caterories();
+        $cata->caterories_insert($name);
+        header('location:index.php?pages=category&action=list');
+    }
+
+
 }
 
 ?>
 
 <div class="col-lg-6 m-auto">
             <div class="card">
-                <div class="card-header text-center bg-dark text-white text-uppercase">Thêm Mới Danh Mục</div>
+                <div class="card-header text-center bg-success-light text-white text-uppercase">Thêm Mới Danh Mục</div>
                 <div class="card-body">
                     <form action="" method="POST" id="add_loai" onsubmit="return validateForm()">
                         <div class="mb-3">
@@ -20,7 +27,9 @@ if(isset($_POST['btn_insert'])&& ($_POST['ten_loai'] !="")){
                         <div class="mb-3">
                             <label for="ten_loai" class="form-label">Tên loại</label>
                             <input type="text" name="ten_loai" class="form-control" id="ten_loai" placeholder="Nhập tên loại...">
-                            <p id="ten_loai_error" style="color: red;"></p>
+                            <p id="ten_loai_error" style="color: red;"><?php if (isset($error)){
+                                echo $error;
+                            } ?></p>
                         </div>
                         <p id="ten_hh_error" style="color: red;">
                         </p>
