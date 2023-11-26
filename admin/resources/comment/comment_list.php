@@ -1,42 +1,43 @@
-<div class="container">
-    <div class="page-title">
-        <h4 class="mt-5 font-weight-bold text-center">Danh sách bình luận</h4>
-    </div>
-    <div class="row col-sm-10 mx-auto">
-        <div class="box-body mx-auto">
-            <table width="100%" class="table table-hover table-bordered text-center">
-                <thead>
-                    <tr class="bg-dark text-white">
-                        <th>Tên hàng hóa</th>
-                        <th>Số bình luận</th>
-                        <th>Mới nhất</th>
-                        <th>Cũ nhất</th>
-                        <th>Chi tiết</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <?php
-                    $showcmt = new comment();
-
-                    $cmt = $showcmt->selectcmt();
-                    foreach ($cmt as $listcmt) :
-                        extract($listcmt);
-
-                    ?>
+<div class="row">
+    <div class="col-md-12 d-flex">
+        <div class="card card-table flex-fill">
+            <div class="card-header d-flex justify-content-between">
+                <h3 class="card-title float-left mt-2">Danh sách bình luận</h3>
+            </div>
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table class="table table-hover text-center">
+                        <thead>
                         <tr>
-                            <td><?= $listcmt['product_name'] ?></td>
-                            <td><?= $listcmt['soluong'] ?></td>
-                            <td><?= $listcmt['cunhat'] ?></td>
-                            <td><?= $listcmt['moinhat'] ?></td>
-                            <td class="text-end d-flex justify-content-around">
-                            <a href="index.php?pages=comments&action=detail&id=<?= $id ?>" class="btn-outline-info btn-rounded" type="submit">Chi tiết</a>
+                            <th>Tên hàng hóa</th>
+                            <th>Số bình luận</th>
+                            <th>Mới nhất</th>
+                            <th>Cũ nhất</th>
+                            <th>Chi tiết</th>
                         </tr>
-                    <?php endforeach; ?>
+                        </thead>
+                        <tbody class=" table table-bordered">
+                        <?php
+                        $showcmt = new comment();
 
-                </tbody>
-
-            </table>
-            </form>
+                        $cmt = $showcmt->selectcmt();
+                        foreach ($cmt as $listcmt) :
+                            extract($listcmt);
+                            ?>
+                            <tr>
+                                <td><?= $listcmt['product_name'] ?></td>
+                                <td><?= $listcmt['soluong'] ?></td>
+                                <td><?= $listcmt['cunhat'] ?></td>
+                                <td><?= $listcmt['moinhat'] ?></td>
+                                <td class="text-center  "><span class="badge badge-pill bg-success inv-badge"><a
+                                                href="index.php?pages=comments&action=detail&id=<?= $id ?>"
+                                                class="text-white" type="submit">Chi tiết</a></span>
+                            </tr>
+                        <?php endforeach; ?>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
         </div>
     </div>
 </div>

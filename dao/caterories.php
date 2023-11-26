@@ -12,7 +12,7 @@ class caterories{
      */
     function caterories_update($name,$id)
     {   $db = new connect();
-        $query = "UPDATE caterories SET name=? WHERE $id=?";
+        $query = "UPDATE caterories SET name=? WHERE id=?";
         $db->pdo_execute($query, $name, $id);
     }
 

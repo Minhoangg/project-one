@@ -8,11 +8,11 @@ class user {
         return $db->pdo_query($select);
     }
 
-    public function checkUser($username, $password)
+    public function checkUser($phone_number, $password)
     {
         $db = new connect();
-        $sql = "SELECT * FROM users WHERE name = ? LIMIT 1";
-        $user = $db->pdo_query_one($sql, $username);
+        $sql = "SELECT * FROM users WHERE phone_number = ? LIMIT 1";
+        $user = $db->pdo_query_one($sql, $phone_number);
 
         if ($user && password_verify($password, $user['password'])) {
             return $user;
@@ -20,10 +20,10 @@ class user {
             return null;
         }
     }
-    function khach_hang_insert($name,$email,$password_hash,$thumbnail,$confirm_password, $role,$phone_number,$address){
+    function khach_hang_insert($name,$email,$password_hash,$thumbnail, $role,$phone_number,$address){
         $db = new connect();
-        $query = "INSERT INTO users(name,email,password,thumbnail,confirm_password, role,phone_number,address) VALUES ( ?, ?, ?, ?, ?, ?,?,?)";
-        $db->pdo_execute($query,$name,$email,$password_hash,$thumbnail,$confirm_password, $role,$phone_number,$address);
+        $query = "INSERT INTO users(name,email,password,thumbnail, role,phone_number,address) VALUES (?, ?, ?, ?, ?,?,?)";
+        $db->pdo_execute($query,$name,$email,$password_hash,$thumbnail, $role,$phone_number,$address);
     }
 
     public function checkPass($id_user, $pass_old)
@@ -53,25 +53,41 @@ class user {
         $result = $db->pdo_query_one($select);
         return $result;
     }
-
-    function deleteUser($id)
+    public function selectByphone($phone_number)
     {
         $db = new connect();
-        $query = "delete from users where id = '$id'";
+        $select = "select * from users where phone_number='$phone_number'";
+        $result = $db->pdo_query_one($select, $phone_number);
+        if ($result) {
+            return $result;
+        } else {
+            return null;
+        }
+    }
+    public function selectByEmail($email)
+    {
+        $db = new connect();
+        $select = "select * from users where email='$email'";
+        $result = $db->pdo_query_one($select, $email);
+        if ($result) {
+            return $result;
+        } else {
+            return null;
+        }
+    }
+
+
+    function deleteUser($iduser)
+    {
+        $db = new connect();
+        $query = "delete from users where id = '$iduser'";
         $db->pdo_execute($query);
     }
 
-    function updateUser($id,$name, $email, $password, $thumbnaill,$confirm_password,$role,$phone, $address)
+    function updateUser($id,$name, $email,  $thumbnaill,$role,$phone, $address)
     {
         $db = new connect();
-        $query = "UPDATE `users` SET `name`='$name',`email`='$email',`password`='$password',`thumbnail`='$thumbnaill',`confirm_password`='$confirm_password',`role`='$role',`phone_number`='$phone',`address`='$address' WHERE id=$id";
-        $db->pdo_execute($query);
-    }
-
-    function insertUser($name, $email, $password,$thumbnail,$confirm_password,$role, $phone, $address)
-    {
-        $db = new connect();
-        $query = "INSERT INTO users(name,email,password,phone_number,address,role,thumbnail) VALUES ($name, $email, $password,$thumbnail,$confirm_password,$role,$phone,$address)";
+        $query = "UPDATE `users` SET `name`='$name',`email`='$email',`thumbnail`='$thumbnaill',`role`='$role',`phone_number`='$phone',`address`='$address' WHERE id=$id";
         $db->pdo_execute($query);
     }
 

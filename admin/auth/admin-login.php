@@ -3,18 +3,18 @@ session_start();
 require_once "../../dao/pdo.php";
 require_once "../../dao/user.php";
 if (isset($_POST['btn_login'])) {
-    $username = $_POST['user_name'];
+    $phone_number = $_POST['number_phone'];
     $password = $_POST['user_pass'];
     $user = new user();
 
-    if (empty($username)) {
-        $error_name = "Vui lòng điền tên đăng nhập";
+    if (empty($phone_number)) {
+        $error_phone_number = "Vui lòng điền tên đăng nhập";
     }
     if (empty($password)) {
         $error_pass = "Vui lòng điền mật khẩu";
     }
     if (!isset($error_name) && !isset($error_pass)) {
-        $checkuser = $user->checkUser($username, $password);
+        $checkuser = $user->checkUser($phone_number, $password);
         if ($checkuser) {
             extract($checkuser);
             if ($role == 1) {
@@ -63,12 +63,12 @@ if (isset($_POST['btn_login'])) {
                         <p class="account-subtitle">Đăng nhập để vào quản lý</p>
                         <form action="" method="post">
                             <div class="form-group">
-                                <input class="form-control" name="user_name" type="text" placeholder="Tên đăng nhập">
+                                <input class="form-control" name="number_phone" type="text" placeholder="Số điện thoại">
                                 <div id="pass_error" class="error-message"
                                      style="color: red; font-size: 14px; margin-top: 5px;">
                                     <?php
-                                    if (isset($error_name)) {
-                                        echo $error_name;
+                                    if (isset($error_phone_number)) {
+                                        echo $error_phone_number;
                                     }
                                     ?>
                                 </div>

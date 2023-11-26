@@ -53,7 +53,7 @@ if (isset($_POST['btn_edit_pass'])) {
 
     $check_pass = $user->checkPass($id_user, $pass_old);
 
-    if (!isset($check_pass)){
+    if (!isset($check_pass)) {
         $error_name_old_not = "Mật khẩu không đúng";
     }
     if ($pass_new != $pass_confirm) {
@@ -61,7 +61,7 @@ if (isset($_POST['btn_edit_pass'])) {
     }
 
     if (!isset($error_name_old) && !isset($error_pass_new) && !isset($error_pass_confirm) && !isset($error_name_old_not) && !isset($error_new_not_confirm)) {
-        $user->updatePass($pass_new_hash,$id_user);
+        $user->updatePass($pass_new_hash, $id_user);
         $success = "Bạn đã cập nhật mật khẩu thành công";
     }
 }
@@ -101,7 +101,7 @@ if (isset($_POST['btn_edit_pass'])) {
                             <div class="card">
                                 <div class="card-body">
                                     <h5 class="card-title d-flex justify-content-between">
-                                        <span>thông tin tài khoảng</span>
+                                        <span>thông tin tài khoản</span>
                                         <a class="edit-link" data-toggle="modal"
                                            href="#edit_personal_details"><i
                                                     class="fa fa-edit mr-1"></i>cập nhật</a>
@@ -195,7 +195,7 @@ if (isset($_POST['btn_edit_pass'])) {
 
                                             <form method="post">
                                                 <div class="form-group">
-                                                    <label>Mật khẩu củ</label>
+                                                    <label>Mật khẩu cũ</label>
                                                     <div class="form-toggle-pass">
                                                         <input type="password" class="form-control" id="pass_old"
                                                                name="pass_old">
@@ -253,7 +253,7 @@ if (isset($_POST['btn_edit_pass'])) {
                                                         ?>
                                                     </div>
                                                 </div>
-                                                <input type="hidden" value="<?=$id?>" name="id_user" >
+                                                <input type="hidden" value="<?= $id ?>" name="id_user">
                                                 <button class="btn btn-primary" type="submit" name="btn_edit_pass">cập
                                                     nhật
                                                 </button>

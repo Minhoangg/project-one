@@ -5,12 +5,7 @@ if (isset($_SESSION['admin'])) {
 ?>
 <div class="header">
     <div class="header-left">
-        <a href="" class="logo"> <img src="<?= $UPLOAD_URL . '/user/' . $thumbnail ?>" width="50" height="70"
-                                      alt="logo"> <span class="logoclass"><?=
-                $name
-                ?></span> </a>
-        <a href="" class="logo logo-small"> <img src="<?= $UPLOAD_URL . '/user/' . $thumbnail ?>" alt="Logo" width="30"
-                                                 height="30"> </a>
+        <a href="index.html" class="logo">  <span class="logoclass">CSS Store</span> </a>
     </div>
     <a href="javascript:void(0);" id="toggle_btn"> <i class="fa-solid fa-bars"></i></a>
     <a class="mobile_btn " id="mobile_btn"> <i class="fa-solid fa-bars"></i> </a>
