@@ -74,5 +74,21 @@ class connect
             unset($conn);
         }
     }
+
+    function pdo_execute_return_lastID($sql){
+        $sql_args = array_slice(func_get_args(), 1);
+        try{
+            $conn = $this->pdo_get_connection();
+            $stmt = $conn->prepare($sql);
+            $stmt->execute($sql_args);
+            return $conn -> lastInsertId();
+        }
+        catch(PDOException $e){
+            throw $e;
+        }
+        finally{
+            unset($conn);
+        }
+    }
 }
 ?>

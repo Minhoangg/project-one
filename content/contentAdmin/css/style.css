@@ -6382,5 +6382,23 @@ h3.page-sub-title {
         display: none
     }
 }
+   .custom-table {
+    background-color: #f2f2f2; /* Màu nền của bảng */
+    border-collapse: collapse; /* Gộp viền của các ô */
+    width: 100%; /* Chiều rộng bảng */
+}
+
+/* Định dạng cho các ô (cells) */
+.custom-table th,
+.custom-table td {
+    border: 1px solid #dddddd; /* Viền ô */
+    text-align: left; /* Căn chỉnh văn bản trong ô */
+    padding: 8px; /* Khoảng cách từ nội dung đến viền của ô */
+}
+
+/* Định dạng cho các ô header */
+.custom-table th {
+    background-color: #e6e6e6; /* Màu nền của các ô header */
+}
 
 

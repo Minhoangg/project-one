@@ -42,9 +42,6 @@ if (isset($_POST['btn_update'])) {
         $error_time_update = "Vui lòng chọn đúng ngày cập nhật thông tin.";
     }
 
-    if ($thoiThem < $thoiGianUnix) {
-        $error_time_add = "Vui lòng chọn đúng ngày nhập";
-    }
 
     if ($thoiThem > $thoiCapNhat) {
         $error_real_update = "Thời gian thêm ko thể lớn hơn thời gian cập nhật.";
@@ -166,9 +163,6 @@ if (isset($_POST['btn_update'])) {
                                    value="<?= $getOneTB["created_at"] ?>">
                             <p style="color: red;">
                                 <?
-                                if (isset($error_time_add)) {
-                                    echo $error_time_add;
-                                }
                                 if (isset($error_real_update)) {
                                     echo $error_real_update;
                                 }

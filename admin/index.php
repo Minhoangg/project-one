@@ -35,6 +35,7 @@ include '../global.php';
     require_once('../dao/thongke.php');
     require_once('../dao/caterories.php');
     require_once('../dao/comment.php');
+    require_once('../dao/orders.php');
     ?>
 
     <div class="page-wrapper" style="padding-top: 70px;">
@@ -164,6 +165,17 @@ include '../global.php';
                             break;
                     }
                     break;
+                case 'order':
+                    switch ($_GET['action']) {
+                        case 'list':
+                            include './resources/cart/cart_list.php';
+                            break;
+                        case 'detail':
+                            include './resources/cart/cart_detail.php';
+                            break;
+
+                    }
+                    break;
                 case 'login':
                     header('location: ./auth/admin-login.php');
                     break;
@@ -175,7 +187,7 @@ include '../global.php';
 
 
 <script type="text/javascript"
-        src='https://cdn.tiny.cloud/1/9zrykebfvudm2wbo6rkhrbkxawz5ypn8mgozn4kzou55oj20/tinymce/6/tinymce.min.js'
+        src='https://cdn.tiny.cloud/1/knslyg5itucw7crhulwtavh3mbca4j42iass9vuqg5sn59k5/tinymce/6/tinymce.min.js'
         referrerpolicy="origin">
 </script>
 

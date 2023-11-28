@@ -21,6 +21,7 @@
                         $showcmt = new comment();
 
                         $cmt = $showcmt->selectcmt();
+
                         foreach ($cmt as $listcmt) :
                             extract($listcmt);
                             ?>

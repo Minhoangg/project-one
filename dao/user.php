@@ -84,10 +84,16 @@ class user {
         $db->pdo_execute($query);
     }
 
-    function updateUser($id,$name, $email,  $thumbnaill,$role,$phone, $address)
+    function updateUser($id,$name, $email, $thumbnaill,$role,$phone, $address)
     {
         $db = new connect();
         $query = "UPDATE `users` SET `name`='$name',`email`='$email',`thumbnail`='$thumbnaill',`role`='$role',`phone_number`='$phone',`address`='$address' WHERE id=$id";
+        $db->pdo_execute($query);
+    }
+    function updateUserinorder($id,$name, $email, $phone, $address)
+    {
+        $db = new connect();
+        $query = "UPDATE `users` SET `name`='$name',`email`='$email',`phone_number`='$phone',`address`='$address' WHERE id=$id";
         $db->pdo_execute($query);
     }
 

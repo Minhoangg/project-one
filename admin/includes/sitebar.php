@@ -29,6 +29,12 @@
                         <li><a href="index.php?pages=user&action=add"> Thêm Danh Sách Khách Hàng </a></li>
                     </ul>
                 </li>
+                <li class="submenu"><a href="#"><i class="fa-regular fa-calendar-days"></i><span>Đơn Hàng</span> <span
+                                class="menu-arrow"></span></a>
+                    <ul class="submenu_class" style="display: none;">
+                        <li><a href="index.php?pages=order&action=list"> Danh Sách Đơn Hàng</a></li>
+                    </ul>
+                </li>
 
                 <li class="submenu"><a href="#"><i class="fa fa-comments"></i> <span> Bình Luận</span> <span
                                 class="menu-arrow"></span></a>

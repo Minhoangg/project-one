@@ -22,7 +22,8 @@ class thongke{
         AVG(products.price) as avgprice
         FROM caterories LEFT JOIN products ON 
         caterories.id = products.category_id 
-        GROUP BY caterories.id";
+        GROUP BY caterories.id
+        HAVING countct >0 ORDER BY `countct` DESC ";
         return $db->pdo_query($select);
     }
     function getDataChart()
