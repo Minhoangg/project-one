@@ -76,13 +76,13 @@ if (isset($_POST['btn_edit_info'])) {
                                 <?php
 
                                   if ( $select_order['status'] == 0) {
-                                      echo '<span class= "label bg-primary-light">đơn hàng mới</span>';
+                                      echo '<span class= "label bg-primary-light">Đơn hàng mới</span>';
                                   } elseif ( $select_order['status'] == 1) {
-                                      echo '<span class="label bg-success">đơn hàng đã xác nhận</span>';
+                                      echo '<span class="label bg-success">Đơn hàng đã xác nhận</span>';
                                   } elseif ( $select_order['status']== 2) {
-                                      echo '<span class="label bg-success-light">đơn hàng thành công</span>';
+                                      echo '<span class="label bg-success-light">Đơn hàng thành công</span>';
                                   } else {
-                                      echo '<span class="label bg-danger">hủy đơn hàng</span>';
+                                      echo '<span class="label bg-danger">Hủy đơn hàng</span>';
                                   }
 
 
@@ -132,7 +132,8 @@ if (isset($_POST['btn_edit_info'])) {
 
                         <td>
                             <?php
-                            echo $tt = $hh['soluong']*$hh['price']
+                             $tt = $hh['soluong']*$hh['price'];
+                             echo $tong_tien=number_format($tt, 0, ",", ".");
                             ?>
 
                         </td>
@@ -146,13 +147,16 @@ if (isset($_POST['btn_edit_info'])) {
 
 
 
-                        <tr>
-                            <td colspan =6>
-                                Tổng tiền :<?= $od->tongDonHang($selectOder)?>
-                            </td>
-                        </tr>
+
 
                         </tbody>
+                        <tfoot>
+                        <tr>
+                        <td colspan =6>
+                            Tổng tiền:  <?= $od->tongDonHang($selectOder)?>VND
+                        </td>
+                        </tr>
+                        </tfoot>
 
                     </table>
                     <form method="post">

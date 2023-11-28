@@ -125,8 +125,8 @@ class orders
         foreach ($order as $od) {
 
             $tongtien = $od['soluong'] * $od['price'];
-            $tongDonHang += $tongtien;
-
+            $tt=number_format($tongtien, 0, ",", ".");
+            $tongDonHang += $tt;
         }
 
         return $tongDonHang;

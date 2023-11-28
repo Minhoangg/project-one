@@ -16,7 +16,7 @@ $order = new orders();
                         <thead>
                         <tr>
                             <th>Mã Đơn Hàng</th>
-                            <th>Ngày Đặc Hàng</th>
+                            <th>Ngày Đặt Hàng</th>
                             <th>Địa Chỉ</th>
                             <th>Trạng Thái</th>
                             <th>Tác vụ</th>
@@ -38,15 +38,15 @@ $order = new orders();
                                     <?= $od['shipping_address'] ?>
                                 </td>
 
-                                <td>
+                                <td class="text-white">
                                     <?php if ($od['status']==0){
-                                        echo '<span class= "label bg-primary-light">đơn hàng mới</span>';
+                                        echo '<span class= "badge bg-primary-light">Đơn hàng mới</span>';
                                     } elseif ($od['status']==1){
-                                        echo '<span class="label bg-success">đơn hàng đã xác nhận</span>';
+                                        echo '<span class="badge bg-info">Đơn hàng đã xác nhận</span>';
                                     }elseif ($od['status']==2){
-                                        echo '<span class="label bg-success-light">đơn hàng thành công</span>';
+                                        echo '<span class="badge bg-success-light">Đơn hàng thành công</span>';
                                     }else{
-                                        echo '<span class="label bg-danger">hủy đơn hàng</span>';
+                                        echo '<span class="badge bg-danger">Hủy đơn hàng</span>';
                                     }
 
                                     ?>
