@@ -20,10 +20,28 @@ class user {
             return null;
         }
     }
+
+    public function checkEmail($email)
+    {
+        $db = new connect();
+        $sql = "SELECT * FROM users WHERE email = ? LIMIT 1";
+        $user = $db->pdo_query_one($sql, $email);
+        if ($user) {
+            return $user;
+        } else {
+            return null;
+        }
+
+    }
     function khach_hang_insert($name,$email,$password_hash,$thumbnail, $role,$phone_number,$address){
         $db = new connect();
         $query = "INSERT INTO users(name,email,password,thumbnail, role,phone_number,address) VALUES (?, ?, ?, ?, ?,?,?)";
         $db->pdo_execute($query,$name,$email,$password_hash,$thumbnail, $role,$phone_number,$address);
+    }
+    function insert_user_google($name,$email,$imageSaveData){
+        $db = new connect();
+        $query = "INSERT INTO users(name,email,password,thumbnail, role,phone_number,address) VALUES (?, ?, 0, ?, 0,0,0)";
+        $db->pdo_execute($query,$name,$email,$imageSaveData);
     }
 
     public function checkPass($id_user, $pass_old)

@@ -1,3 +1,10 @@
+<?php
+ob_start();
+session_start();
+require_once "./global.php";
+include_once "./vendor/autoload.php";
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -11,9 +18,11 @@ include './view/component/stylesheet.php';
 <?php
 include './view/component/header.php';
 ?>
-
+<!-- End Header -->
 
 <?php
+include "./dao/pdo.php";
+include "./dao/user.php";
 
 if (isset($_GET['pages'])) {
     $pages = $_GET['pages'];
@@ -42,6 +51,10 @@ switch ($pages) {
     case 'login':
         include './view/page/login.php';
         break;
+    case 'logout':
+        session_unset();
+        header('location: index.php?pages=home');
+        break;
     default:
         include './view/page/home.php';
         break;
@@ -65,6 +78,8 @@ include './view/page/back-to-top.php';
 <?php
 include './view/page/product-detail.php';
 ?>
+
+
 
 <!--===============================================================================================-->
 <script src="./content/contentCilent/vendor/jquery/jquery-3.2.1.min.js"></script>

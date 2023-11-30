@@ -46,10 +46,46 @@
 						<div class="icon-header-item cl2 hov-cl1 trans-04 p-l-22 p-r-11 " >
 							<a href="index.php?pages=cart" class="zmdi zmdi-shopping-cart text-dark "></a>
 						</div>
-
-						<a href="index.php?pages=login" class="icon-header-item cl2 hov-cl1 trans-04 p-l-22 p-r-11 " >
-                            <i class="fa fa-user" aria-hidden="true"></i>
-						</a>
+                        <div class="icon-header-item cl2 hov-cl1 trans-04 p-l-22 p-r-11 "  style="position: relative">
+                            <?php
+                            if (isset($_SESSION['user'])){
+                                extract($_SESSION['user']);
+                                ?>
+                                <img src="<?= $UPLOAD_URL . '/user/' . $thumbnail ?>" alt="" style="border-radius: 50%;" width="40px" onclick="toggleMenu()">
+                                <?php
+                            }else{
+                                ?>
+                                    <a href="index.php?pages=login" class="icon-header-item cl2 hov-cl1 trans-04 p-l-22 p-r-11 " >
+                                        <i class="fa fa-user" aria-hidden="true"></i>
+                                    </a>
+                                <?php
+                            }
+                            ?>
+                            <div class="menu-info-wrap " id="menuinfo" >
+                                <div class="menu-info">
+                                    <div class="uer-info">
+                                        <img src="<?= $UPLOAD_URL . '/user/' . $thumbnail ?>">
+                                        <h3><?=  $name ?></h3>
+                                    </div>
+                                    <hr>
+                                    <a href="" class="menu-link" >
+                                        <i class="fa fa-user" aria-hidden="true"></i>
+                                        <p>Thông tin</p>
+                                        <span> > </span>
+                                    </a>
+                                    <a href="" class="menu-link" >
+                                        <i class="fa fa-building" aria-hidden="true"></i>
+                                        <p>Đơn hàng</p>
+                                        <span> > </span>
+                                    </a>
+                                    <a  href="index.php?pages=logout"  class="menu-link" >
+                                        <i class="fa fa-sign-out" aria-hidden="true"></i>
+                                        <p>Đăng xuất</p>
+                                        <span> > </span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
 					</div>
 				</nav>
 			</div>
@@ -159,3 +195,15 @@
 		</div>
 	</header>
 
+
+
+<script>
+    function toggleMenu() {
+        let submenu = document.getElementById("menuinfo");
+        if (submenu.style.display === "none" || submenu.style.display === "") {
+            submenu.style.display = "block";
+        } else {
+            submenu.style.display = "none";
+        }
+    }
+</script>
