@@ -1,8 +1,7 @@
 <!-- Title page -->
-<section class="bg-img1 txt-center p-lr-15 p-tb-92"
-	style="background-image: url('../content/contentCilent/images/bg-02.jpg');">
+<section class="bg-img1 txt-center p-lr-15 p-tb-92" style="background-image: url('../content/contentCilent/images/bg-02.jpg');">
 	<h2 class="ltext-105 cl0 txt-center">
-		Blog
+		Bài Viết
 	</h2>
 </section>
 <!-- Content page -->
@@ -22,7 +21,7 @@
 								</span>
 
 								<span class="stext-109 cl3 txt-center">
-									Jan 2018
+									Tháng 1, 2018
 								</span>
 							</div>
 						</a>
@@ -30,34 +29,33 @@
 						<div class="p-t-32">
 							<h4 class="p-b-15">
 								<a href="layout.php?pages=blog-detail" class="ltext-108 cl2 hov-cl1 trans-04">
-									8 Inspiring Ways to Wear Dresses in the Winter
+									8 cách mặc váy đầy cảm hứng trong mùa đông
 								</a>
 							</h4>
 
 							<p class="stext-117 cl6">
-								Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos
-								himenaeos. Fusce eget dictum tortor. Donec dictum vitae sapien eu varius
+							Nhắc đến việc lựa chọn váy áo cho mùa đông, chắc hẳn sẽ có rất nhiều chị em ngần ngại. Khi nhiệt độ bên ngoài xuống thấp thì váy vóc “có vẻ" sẽ không được ưa chuộng bằng những mẫu quần ấm áp.
 							</p>
 
 							<div class="flex-w flex-sb-m p-t-18">
 								<span class="flex-w flex-m stext-111 cl2 p-r-30 m-tb-10">
 									<span>
-										<span class="cl4">By</span> Admin
+										<span class="cl4">Bởi</span> Trang chủ
 										<span class="cl12 m-l-4 m-r-6">|</span>
 									</span>
 
 									<span>
-										StreetStyle, Fashion, Couple
+									Cách sống, Thời Trang, Cặp Đôi
 										<span class="cl12 m-l-4 m-r-6">|</span>
 									</span>
 
 									<span>
-										8 Comments
+										8 bình luận
 									</span>
 								</span>
 
 								<a href="layout.php?pages=blog-detail" class="stext-101 cl2 hov-cl1 trans-04 m-tb-10">
-									Continue Reading
+									Đọc tiếp
 
 									<i class="fa fa-long-arrow-right m-l-9"></i>
 								</a>
@@ -76,7 +74,7 @@
 								</span>
 
 								<span class="stext-109 cl3 txt-center">
-									Jan 2018
+									Tháng 1, 2018
 								</span>
 							</div>
 						</a>
@@ -84,35 +82,33 @@
 						<div class="p-t-32">
 							<h4 class="p-b-15">
 								<a href="layout.php?pages=blog-detail" class="ltext-108 cl2 hov-cl1 trans-04">
-									The Great Big List of Men’s Gifts for the Holidays
+									Danh sách lớn những món quà dành cho nam giới trong ngày lễ
 								</a>
 							</h4>
 
 							<p class="stext-117 cl6">
-								Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos
-								himenaeos. Fusce eget dictum tortor. Donec dictum vitae sapien eu varius
+							Thông thường mỗi chàng trai đều có những sở thích riêng biệt khác nhau, những việc bạn không thể hỏi trực tiếp các chàng vì mọi bí mật cho chuyện quà tặng sẽ bị lộ ngay tức khắc, nên chị em chỉ cần quan sát những hành động hay lời nói của người yêu mình hàng ngày là có thể nhận ra người đó thích gì hoặc trong đời sống hàng ngày, người yêu mình thiếu những món gì chị em có thể biến nó thành quà tặng cho người yêu mình.
 							</p>
 
 							<div class="flex-w flex-sb-m p-t-18">
 								<span class="flex-w flex-m stext-111 cl2 p-r-30 m-tb-10">
 									<span>
-										<span class="cl4">By</span> Admin
+										<span class="cl4">Bởi</span> Trang chủ
 										<span class="cl12 m-l-4 m-r-6">|</span>
 									</span>
 
 									<span>
-										StreetStyle, Fashion, Couple
+										Cách sống, Thời Trang, Cặp Đôi
 										<span class="cl12 m-l-4 m-r-6">|</span>
 									</span>
 
 									<span>
-										8 Comments
+										8 bình luận
 									</span>
 								</span>
 
 								<a href="layout.php?pages=blog-detail" class="stext-101 cl2 hov-cl1 trans-04 m-tb-10">
-									Continue Reading
-
+									Đọc tiếp
 									<i class="fa fa-long-arrow-right m-l-9"></i>
 								</a>
 							</div>
@@ -130,7 +126,7 @@
 								</span>
 
 								<span class="stext-109 cl3 txt-center">
-									Jan 2018
+									Tháng 1, 2018
 								</span>
 							</div>
 						</a>
@@ -138,34 +134,34 @@
 						<div class="p-t-32">
 							<h4 class="p-b-15">
 								<a href="layout.php?pages=blog-detail" class="ltext-108 cl2 hov-cl1 trans-04">
-									5 Winter-to-Spring Fashion Trends to Try Now
+
+									5 Xu Hướng Thời Trang Đông Xuân Bạn Nên Thử Ngay
 								</a>
 							</h4>
 
 							<p class="stext-117 cl6">
-								Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos
-								himenaeos. Fusce eget dictum tortor. Donec dictum vitae sapien eu varius
+							Nếu bạn đã quá phát ngán với quiet luxury nền nã và quy chuẩn, loud luxury là xu hướng sinh ra dành cho bạn. Theo tinh thần "Tốt đẹp phô ra", các nhà mốt đã rục rịch lăng xê những thiết kế "sang trọng ồn ào" trên các sàn diễn Xuân/Hè 2024. Marni, Rabanne, Balmain và Moschino là thương hiệu bạn có thể dựa vào để lấy cảm hứng với trường phái "loud luxury" này.
 							</p>
 
 							<div class="flex-w flex-sb-m p-t-18">
 								<span class="flex-w flex-m stext-111 cl2 p-r-30 m-tb-10">
 									<span>
-										<span class="cl4">By</span> Admin
+										<span class="cl4">Bởi</span> Trang chủ
 										<span class="cl12 m-l-4 m-r-6">|</span>
 									</span>
 
 									<span>
-										StreetStyle, Fashion, Couple
+									Cách sống, Thời Trang, Cặp Đôi
 										<span class="cl12 m-l-4 m-r-6">|</span>
 									</span>
 
 									<span>
-										8 Comments
+										8 bình luận
 									</span>
 								</span>
 
 								<a href="layout.php?pages=blog-detail" class="stext-101 cl2 hov-cl1 trans-04 m-tb-10">
-									Continue Reading
+									Đọc tiếp
 
 									<i class="fa fa-long-arrow-right m-l-9"></i>
 								</a>
@@ -189,8 +185,7 @@
 			<div class="col-md-4 col-lg-3 p-b-80">
 				<div class="side-menu">
 					<div class="bor17 of-hidden pos-relative">
-						<input class="stext-103 cl2 plh4 size-116 p-l-28 p-r-55" type="text" name="search"
-							placeholder="Search">
+						<input class="stext-103 cl2 plh4 size-116 p-l-28 p-r-55" type="text" name="search" placeholder="Tìm kiếm">
 
 						<button class="flex-c-m size-122 ab-t-r fs-18 cl4 hov-cl1 trans-04">
 							<i class="zmdi zmdi-search"></i>
@@ -199,37 +194,38 @@
 
 					<div class="p-t-55">
 						<h4 class="mtext-112 cl2 p-b-33">
-							Categories
+							Danh mục
 						</h4>
 
 						<ul>
 							<li class="bor18">
 								<a href="#" class="dis-block stext-115 cl6 hov-cl1 trans-04 p-tb-8 p-lr-4">
-									Fashion
+									Thời trang
 								</a>
 							</li>
 
 							<li class="bor18">
 								<a href="#" class="dis-block stext-115 cl6 hov-cl1 trans-04 p-tb-8 p-lr-4">
-									Beauty
+
+									Sắc đẹp
 								</a>
 							</li>
 
 							<li class="bor18">
 								<a href="#" class="dis-block stext-115 cl6 hov-cl1 trans-04 p-tb-8 p-lr-4">
-									Street Style
+									Phong cách đường phố
 								</a>
 							</li>
 
 							<li class="bor18">
 								<a href="#" class="dis-block stext-115 cl6 hov-cl1 trans-04 p-tb-8 p-lr-4">
-									Life Style
+									Cách sống
 								</a>
 							</li>
 
 							<li class="bor18">
 								<a href="#" class="dis-block stext-115 cl6 hov-cl1 trans-04 p-tb-8 p-lr-4">
-									DIY & Crafts
+									DIY & Thủ công
 								</a>
 							</li>
 						</ul>
@@ -237,7 +233,7 @@
 
 					<div class="p-t-65">
 						<h4 class="mtext-112 cl2 p-b-33">
-							Featured Products
+							Sản phẩm nổi bật
 						</h4>
 
 						<ul>
@@ -248,7 +244,7 @@
 
 								<div class="size-215 flex-col-t p-t-8">
 									<a href="#" class="stext-116 cl8 hov-cl1 trans-04">
-										White Shirt With Pleat Detail Back
+										Sơ Mi Trắng Chi Tiết Xếp Ly Phía Sau
 									</a>
 
 									<span class="stext-116 cl6 p-t-20">
@@ -293,14 +289,15 @@
 
 					<div class="p-t-55">
 						<h4 class="mtext-112 cl2 p-b-20">
-							Archive
+
+							Lưu trữ
 						</h4>
 
 						<ul>
 							<li class="p-b-7">
 								<a href="#" class="flex-w flex-sb-m stext-115 cl6 hov-cl1 trans-04 p-tb-2">
 									<span>
-										July 2018
+										Tháng 7, 2018
 									</span>
 
 									<span>
@@ -312,7 +309,7 @@
 							<li class="p-b-7">
 								<a href="#" class="flex-w flex-sb-m stext-115 cl6 hov-cl1 trans-04 p-tb-2">
 									<span>
-										June 2018
+										Tháng 6, 2018
 									</span>
 
 									<span>
@@ -324,7 +321,7 @@
 							<li class="p-b-7">
 								<a href="#" class="flex-w flex-sb-m stext-115 cl6 hov-cl1 trans-04 p-tb-2">
 									<span>
-										May 2018
+										Tháng 5, 2018
 									</span>
 
 									<span>
@@ -336,7 +333,7 @@
 							<li class="p-b-7">
 								<a href="#" class="flex-w flex-sb-m stext-115 cl6 hov-cl1 trans-04 p-tb-2">
 									<span>
-										April 2018
+										Tháng 4,2018
 									</span>
 
 									<span>
@@ -348,7 +345,7 @@
 							<li class="p-b-7">
 								<a href="#" class="flex-w flex-sb-m stext-115 cl6 hov-cl1 trans-04 p-tb-2">
 									<span>
-										March 2018
+										Tháng 3, 2018
 									</span>
 
 									<span>
@@ -360,7 +357,7 @@
 							<li class="p-b-7">
 								<a href="#" class="flex-w flex-sb-m stext-115 cl6 hov-cl1 trans-04 p-tb-2">
 									<span>
-										February 2018
+										Tháng 2, 2018
 									</span>
 
 									<span>
@@ -372,7 +369,7 @@
 							<li class="p-b-7">
 								<a href="#" class="flex-w flex-sb-m stext-115 cl6 hov-cl1 trans-04 p-tb-2">
 									<span>
-										January 2018
+										Tháng 1, 2018
 									</span>
 
 									<span>
@@ -384,7 +381,7 @@
 							<li class="p-b-7">
 								<a href="#" class="flex-w flex-sb-m stext-115 cl6 hov-cl1 trans-04 p-tb-2">
 									<span>
-										December 2017
+										Tháng 12, 2017
 									</span>
 
 									<span>
@@ -397,33 +394,29 @@
 
 					<div class="p-t-50">
 						<h4 class="mtext-112 cl2 p-b-27">
-							Tags
+
+							Thẻ
 						</h4>
 
 						<div class="flex-w m-r--5">
-							<a href="#"
-								class="flex-c-m stext-107 cl6 size-301 bor7 p-lr-15 hov-tag1 trans-04 m-r-5 m-b-5">
-								Fashion
+							<a href="#" class="flex-c-m stext-107 cl6 size-301 bor7 p-lr-15 hov-tag1 trans-04 m-r-5 m-b-5">
+								Phong cách
 							</a>
 
-							<a href="#"
-								class="flex-c-m stext-107 cl6 size-301 bor7 p-lr-15 hov-tag1 trans-04 m-r-5 m-b-5">
-								Lifestyle
+							<a href="#" class="flex-c-m stext-107 cl6 size-301 bor7 p-lr-15 hov-tag1 trans-04 m-r-5 m-b-5">
+								Cách sống
 							</a>
 
-							<a href="#"
-								class="flex-c-m stext-107 cl6 size-301 bor7 p-lr-15 hov-tag1 trans-04 m-r-5 m-b-5">
-								Denim
+							<a href="#" class="flex-c-m stext-107 cl6 size-301 bor7 p-lr-15 hov-tag1 trans-04 m-r-5 m-b-5">
+								Vải jean
 							</a>
 
-							<a href="#"
-								class="flex-c-m stext-107 cl6 size-301 bor7 p-lr-15 hov-tag1 trans-04 m-r-5 m-b-5">
-								Streetstyle
+							<a href="#" class="flex-c-m stext-107 cl6 size-301 bor7 p-lr-15 hov-tag1 trans-04 m-r-5 m-b-5">
+								Phong cách đường phố
 							</a>
 
-							<a href="#"
-								class="flex-c-m stext-107 cl6 size-301 bor7 p-lr-15 hov-tag1 trans-04 m-r-5 m-b-5">
-								Crafts
+							<a href="#" class="flex-c-m stext-107 cl6 size-301 bor7 p-lr-15 hov-tag1 trans-04 m-r-5 m-b-5">
+								Đồ thủ công
 							</a>
 						</div>
 					</div>
