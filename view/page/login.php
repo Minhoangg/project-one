@@ -88,9 +88,6 @@ if (isset($_POST["btn_login"])) {
 
 ?>
 
-
-
-
 <div class="limiter">
     <div class="container-login100" style="background-image: url('images/bg-01.jpg');">
         <div class="wrap-login100 p-l-110 p-r-110 p-t-62 p-b-33">
@@ -116,8 +113,6 @@ if (isset($_POST["btn_login"])) {
                 <div class="wrap-input100 validate-input" data-validate="Username is required">
                     <input class="input100" type="text" name="username">
                     <span class="focus-input100"></span>
-
-                    </input>
                 </div>
                 <div class="w-100 p-t-13 p-b-9">
                     <p style="color:red">
@@ -143,11 +138,17 @@ if (isset($_POST["btn_login"])) {
                 <div class="wrap-input100 validate-input" data-validate="Password is required">
                     <input class="input100" type="password" name="pass">
                     <span class="focus-input100"></span>
-
                 </div>
                 <p style="color:red">
-                    <?php if (isset($loimatkhau))
-                        echo $loimatkhau ?>
+                    <?php
+                    if (isset($loimatkhau))
+                    {
+                        echo $loimatkhau;
+                    }
+                    if (isset($error_not_account)){
+                         echo $error_not_account;
+                    }
+                       ?>
                     </p>
                     <div class="container-login100-form-btn m-t-17">
                         <button class="login100-form-btn" name="btn_login">
