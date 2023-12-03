@@ -93,6 +93,19 @@ class user {
             return null;
         }
     }
+    public function selectByUser($phone_number, $password)
+{
+    $db = new connect();
+    $select = "SELECT * FROM users WHERE phone_number = $phone_number AND password = $password";
+
+    $login = $db->pdo_query_one($select, $phone_number, $password);
+    if ($login) {
+        return $login;
+    } else {
+        return null;
+    }
+}
+
 
 
     function deleteUser($iduser)
@@ -102,7 +115,7 @@ class user {
         $db->pdo_execute($query);
     }
 
-    function updateUser($id,$name, $email, $thumbnaill,$role,$phone, $address)
+    function updateUser($id, $name, $email, $thumbnaill,$role,$phone, $address)
     {
         $db = new connect();
         $query = "UPDATE `users` SET `name`='$name',`email`='$email',`thumbnail`='$thumbnaill',`role`='$role',`phone_number`='$phone',`address`='$address' WHERE id=$id";
