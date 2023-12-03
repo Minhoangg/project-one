@@ -121,5 +121,18 @@ class user {
         $query = "UPDATE users SET name = '$name', email = '$email_user', address = '$adress_user',thumbnail='$thumbnail', phone_number = '$number_user' WHERE id = '$id_user'";
         $db->pdo_execute($query);
     }
+   public function insert_user($name,$email,$password,$thumbnail,$phone_number){
+        $db = new connect();
+        $query = "INSERT INTO users(name,email,password) VALUES ('$name','$email','$password','$phone_number')";
+       $result= $db->pdo_execute($query);
+        return $result;
+    }
+    public function check($username,$email,$phone){
+        $db = new connect();
+        $query = "SELECT * from users WHERE name='$username' or email='$email' or phone_number='$phone';";
+       $result= $db->pdo_query($query);
+        return $result;
+    }
+   
 }
 ?>
