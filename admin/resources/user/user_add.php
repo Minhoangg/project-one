@@ -37,7 +37,7 @@ if (isset($_POST['btn_insert'])) {
         $loimatkhau = 'Mật khẩu không được bỏ trống';
     }
     if (empty($confirm_password)) {
-        $loinhaplai = 'Nhập lại khong được bỏ trống';
+        $loinhaplai = 'Nhập lại không được bỏ trống';
     }
     if ($password != $confirm_password) {
         $loi = 'Nhập lại mật khẩu không đúng';
@@ -87,7 +87,8 @@ if (isset($_POST['btn_insert'])) {
                         <div class="form-group col-sm-6">
                             <label for="phone" class="form-label">Số điện thoại</label>
                             <input type="phone" name="phone" id="phone" class="form-control">
-                            <p style="color:red"><?php if (isset($loisdt)) {
+                            <p style="color:red">
+                            <?php if (isset($loisdt)) {
                                     echo $loisdt;
                                 }
                                 if (isset($error_phone)) {
