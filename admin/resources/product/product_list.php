@@ -34,7 +34,7 @@ $product = new Products();
                                     <?= $hh['product_name'] ?>
                                 </td>
 
-                                <td><img src="<?= $UPLOAD_URL . '/upload/' . $hh['product_thumbnail'] ?>" width="70"
+                                <td><img src="<?= $UPLOAD_URL . '/upload/'. $hh['product_thumbnail'] ?>" width="70"
                                          height="70" alt="NoIMG"></td>
 
 

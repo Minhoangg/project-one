@@ -3,6 +3,9 @@ ob_start();
 session_start();
 require_once "./global.php";
 include_once "./vendor/autoload.php";
+if (!isset($_SESSION['giohang'])) {
+    $_SESSION['giohang'] = [];
+}
 ?>
 
 <!DOCTYPE html>
@@ -23,6 +26,10 @@ include './view/component/header.php';
 <?php
 include "./dao/pdo.php";
 include "./dao/user.php";
+include "./dao/caterories.php";
+include "./dao/product.php";
+include "./dao/orders.php";
+
 
 if (isset($_GET['pages'])) {
     $pages = $_GET['pages'];
@@ -51,6 +58,12 @@ switch ($pages) {
     case 'login':
         include './view/page/login.php';
         break;
+    case 'order':
+        include './view/page/order.php';
+        break;
+    case 'product_detail':
+        include './view/page/product-detail.php';
+        break;
     case 'logout':
         session_unset();
         header('location: index.php?pages=home');
@@ -76,8 +89,8 @@ include './view/page/back-to-top.php';
 
 <!-- Modal1 -->
 <?php
-include './view/page/product-detail.php';
-?>
+//include './view/page/product-detail.php';
+//?>
 
 
 

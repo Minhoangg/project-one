@@ -142,15 +142,91 @@ class Products
     }
 
 
-    // public function listpath(){
-    //     $db = new connect();
-    //     $query ='SELECT products.*, images.path
-    //     FROM products
-    //     JOIN images ON products.id = images.product_id
-    //     LIMIT 3';
-    //     $result = $db->pdo_query($query);
-    //     return $result;
-    // }
+//     public function listpath(){
+//         $db = new connect();
+//         $query ='SELECT products.*, images.path
+//         FROM products
+//         JOIN images ON products.id = images.product_id
+//         LIMIT 3';
+//         $result = $db->pdo_query($query);
+//         return $result;
+//     }
+    function showproduct($dssp)
+    {
+        $html_dssp = '';
+        foreach ($dssp as $sp) {
+
+            extract($sp);
+//            $don_gia = number_format( $don_gia,0,',','.');
+//            if ($dac_biet == 1) {
+//                $db = '<div class="best"></div>';
+//            } else {
+//                $db = '';
+//            }
+            $html_dssp .='
+                <div class ="col-sm-6 col-md-4 col-lg-3 p-b-35 isotope-item">
+				<div class="block2">
+                   <div class="block2-pic hov-img0">
+                         <div>
+							<img src="../../../uploaded/upload/'.$product_thumbnail.'" alt="IMG-PRODUCT">
+							<a href="index.php?pages=product_detail&id='.$id.'" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 ">
+								Chi tiết
+							</a>
+						   </div>
+                    	<div class="block2-txt flex-w flex-t p-t-14">
+							<div class="block2-txt-child1 flex-col-l ">
+								<a href="product-detail.php" class="stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6">
+									'.$product_name.'
+								</a>
+								<span class="stext-105 cl3">
+									'.$price.'
+								</span>
+							</div>
+
+							<div class="block2-txt-child2 flex-r p-t-3">
+								<a href="#" class="btn-addwish-b2 dis-block pos-relative js-addwish-b2">
+									<img class="icon-heart1 dis-block trans-04" src="../content/contentCilent/images/icons/icon-heart-01.png" alt="ICON">
+									<img class="icon-heart2 dis-block trans-04 ab-t-l" src="../content/contentCilent/images/icons/icon-heart-02.png" alt="ICON">
+								</a>
+							</div>
+						</div>
+					</div>
+</div>
+</div>';
+        }
+        return $html_dssp;
+    }
+    function get_products_new($limit)
+    {   $db = new connect();
+        $sql = "SELECT * FROM products order by id DESC LIMIT " . $limit;
+        return $db->pdo_query($sql);
+    }
+    function get_products_hot($limit)
+    {   $db = new connect();
+        $sql = "SELECT * FROM products where product_special=1  order by id DESC LIMIT " . $limit;
+        return $db->pdo_query($sql);
+    }
+    function get_dssp($category_id, $limit)
+    {   $db = new connect();
+        $sql = "SELECT * FROM products where 1";
+        if ($category_id > 0) {
+            $sql .= " AND category_id =". $category_id;
+        }
+        $sql .= " order by id desc limit ". $limit;
+
+        return $db->pdo_query($sql);
+    }
+    function get_product_new($limit)
+    {   $db = new connect();
+        $sql = "SELECT * FROM products order by id DESC LIMIT " . $limit;
+        return $db->pdo_query($sql);
+    }
+    function getdssplq($ma_loai, $ma_hh, $limit)
+    {   $db = new connect();
+        $sql = "SELECT * FROM products where category_id=? and id<>? order by category_id desc limit " . $limit;
+        return $db->pdo_query($sql, $ma_loai, $ma_hh);
+
+    }
 }
 
 ?>
