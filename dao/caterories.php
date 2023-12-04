@@ -64,13 +64,16 @@ class caterories{
         $sql = "SELECT count(*) FROM loai WHERE ma_loai=?";
         return pdo_query_value($sql, $ma_loai) > 0;
     }
-    function showdm($dsdm)
+
+    function showcate($dsdm)
     {
-        $html_dm = '';
+        $html_dm = '<a href="index.php?pages=shop"><button class="stext-106 cl6 hov1 bor3 trans-04 m-r-32 m-tb-5 how-active1" data-filter="*">
+                    Tất cả sản phẩm
+                </button></a>';
         foreach ($dsdm as $dm) {
             extract($dm);
-            $link = 'index.php?pg=sanpham&ma_loai=' . $ma_loai;
-            $html_dm .= '<a href = "' . $link . '">' . $ten_loai . '</a>';
+            $link = 'index.php?pages=shop&category_id='. $id;
+            $html_dm .= '<a class="mr-4" href = "'. $link . '">' . $name . '</a>';
         }
         return $html_dm;
     }

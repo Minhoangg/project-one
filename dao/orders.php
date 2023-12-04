@@ -1,5 +1,4 @@
 <?php
-
 class orders
 {
 
@@ -10,15 +9,13 @@ class orders
         $i = 0;
         if ($del == 1) {
             $xspth = '<th>Thao tác</th>';
-
-
         } else {
             $xspth = '';
-
         }
-        $html_viewcart .= '  <thead class="table-success">
+        $html_viewcart .= '
+            <thead class="table_head">
             <tr>
-            <th>STT</th>
+            <th class="p-3">STT</th>
             <th>Hình</th>
             <th>Tên sản phẩm</th>
             <th>Đơn giá</th>
@@ -31,19 +28,19 @@ class orders
         foreach ($_SESSION['giohang'] as $sp) {
             // extract($sp);
             $tongtien = $sp[3] * $sp[4];
-            $linkdel = "index.php?pg=viewcart&del=" . $i;
+//            $linkdel = "index.php?pg=cart&del=". $i;
+
             if ($del == 1) {
 
-                $xsptd = '<td><a href="index.php?pg=viewcart&del=' . $i . '"><input class="btn btn-danger" type ="button" value ="xóa"></a></td>';
+                $xsptd = '<td><a href="index.php?pages=cart&del=' . $i . '"><input class="btn btn-danger" type ="button" value ="xóa"></a></td>';
             } else {
-
                 $xsptd = '';
             }
             $html_viewcart .= '
        
          <tr>
-                        <td>' . $i . '</td>
-                        <td><img class="w-50" src="../admin/' . $sp[2] . '" alt="" ></td>
+                        <td class ="p-3">' . $i . '</td>
+                        <td><img class="how-itemcart1" src="../../../uploaded/upload/'.$sp[2].'" ></td>
                         <td>' . $sp[0] . '</td>
                         <td>' . $sp[3] . '</td>
                         <td>' . $sp[4] . '</td>
@@ -119,14 +116,10 @@ class orders
     }
     public function tongDonHang($order)
     {
-
         $tongDonHang = 0;
-
         foreach ($order as $od) {
-
-            $tongtien = $od['soluong'] * $od['price'];
-            $tt=number_format($tongtien, 0, ",", ".");
-            $tongDonHang += $tt;
+            $tongtien = $od['3'] * $od['4'];
+            $tongDonHang += $tongtien;
         }
 
         return $tongDonHang;

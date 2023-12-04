@@ -1,145 +1,78 @@
-<div class="wrap-modal1 js-modal1 p-t-60 p-b-20">
-    <div class="overlay-modal1 js-hide-modal1"></div>
+<?php
+if (isset($_GET['id'])) {
+$id = $_GET['id'];
+$pd = new Products();
+$cata = new caterories();
+$product_detail = $pd->products_select_by_id($id);
 
-    <div class="container">
-        <div class="bg0 p-t-60 p-b-30 p-lr-15-lg how-pos3-parent">
-            <button class="how-pos3 hov3 trans-04 js-hide-modal1">
-                <img src="../content/contentCilent/images/icons/icon-close.png" alt="CLOSE">
-            </button>
+$category_id = $product_detail['category_id'];
+$splq = $pd->getdssplq($category_id, $id, 4);
+$html_splq = $pd->showproduct($splq);
+}
 
-            <div class="row">
-                <div class="col-md-6 col-lg-7 p-b-30">
-                    <div class="p-l-25 p-r-30 p-lr-0-lg">
-                        <div class="wrap-slick3 flex-sb flex-w">
-                            <div class="wrap-slick3-dots"></div>
-                            <div class="wrap-slick3-arrows flex-sb-m flex-w"></div>
-
-                            <div class="slick3 gallery-lb">
-                                <div class="item-slick3"
-                                     data-thumb="../content/contentCilent/images/product-detail-01.jpg">
-                                    <div class="wrap-pic-w pos-relative">
-                                        <img src="../content/contentCilent/images/product-detail-01.jpg"
-                                             alt="IMG-PRODUCT">
-
-                                        <a class="flex-c-m size-108 how-pos1 bor0 fs-16 cl10 bg0 hov-btn3 trans-04"
-                                           href="../content/contentCilent/images/product-detail-01.jpg">
-                                            <i class="fa fa-expand"></i>
-                                        </a>
-                                    </div>
+?>
+<section class="container">
+    <!-- <div class="container"> -->
+    <div class="row col-sm-12">
+<!--        <div class="boxleft mr2pt menutrai col-4">-->
+<!--            <h1>DANH MỤC</h1><br><br>-->
+<!--        </div>-->
+        <div class="boxright col-12">
+            <h1>SẢN PHẨM CHI TIỂT</h1><br>
+            <div class="">
+                <div class="row">
+                    <div class="col-6">
+                        <img style="height:70%" class="w-100" src="<?= $UPLOAD_URL . '/upload/'. $product_detail['product_thumbnail'] ?>" alt="đang cập nhật">
+                    </div>
+                    <div class="col-6 textchitiet">
+                        <h2 class="m-all-3">
+                            Tên Sản Phẩm : <?= $product_detail['product_name']?>
+                        </h2>
+                        <h4 class="text-danger mt-3">
+                            Giá Sản Phẩm :<?= $product_detail['price']?>
+                        </h4>
+                        <form action="index.php?pages=cart" method="post">
+                            <input type="hidden" name="product_name" value="<?= $product_detail['product_name']?>">
+                            <input type="hidden" name="id" value="<?= $product_detail['id']?>">
+                            <input type="hidden" name="thumbnail" value="<?= $product_detail['product_thumbnail']?>">
+                            <input type="hidden" name="price" value="<?= $product_detail['price']?>">
+                            <label for="">số Lượng</label>
+                            <div class="wrap-num-product flex-w  m-r-3 m-2">
+                                <div class="btn-num-product-down cl8 hov-btn3 trans-04 flex-c-m">
+                                    <i class="fs-16 zmdi zmdi-minus"></i>
                                 </div>
 
-                                <div class="item-slick3"
-                                     data-thumb="../content/contentCilent/images/product-detail-02.jpg">
-                                    <div class="wrap-pic-w pos-relative">
-                                        <img src="../content/contentCilent/images/product-detail-02.jpg"
-                                             alt="IMG-PRODUCT">
+                                <input class="mtext-104 cl3 txt-center num-product" type="number" name="qty" value="1">
 
-                                        <a class="flex-c-m size-108 how-pos1 bor0 fs-16 cl10 bg0 hov-btn3 trans-04"
-                                           href="../content/contentCilent/images/product-detail-02.jpg">
-                                            <i class="fa fa-expand"></i>
-                                        </a>
-                                    </div>
-                                </div>
-
-                                <div class="item-slick3"
-                                     data-thumb="../content/contentCilent/images/product-detail-03.jpg">
-                                    <div class="wrap-pic-w pos-relative">
-                                        <img src="../content/contentCilent/images/product-detail-03.jpg"
-                                             alt="IMG-PRODUCT">
-
-                                        <a class="flex-c-m size-108 how-pos1 bor0 fs-16 cl10 bg0 hov-btn3 trans-04"
-                                           href="../content/contentCilent/images/product-detail-03.jpg">
-                                            <i class="fa fa-expand"></i>
-                                        </a>
-                                    </div>
+                                <div class="btn-num-product-up cl8 hov-btn3 trans-04 flex-c-m">
+                                    <i class="fs-16 zmdi zmdi-plus"></i>
                                 </div>
                             </div>
-                        </div>
+
+
+                            <button class="flex-c-m stext-101 cl0 size-101 bg1 bor1 hov-btn1 p-lr-15 trans-04" type="submit" name="addtocart">Đặt hàng</button>
+                        </form>
                     </div>
+
+
                 </div>
 
-                <div class="col-md-6 col-lg-5 p-b-30">
-                    <div class="p-r-50 p-t-5 p-lr-0-lg">
-                        <h4 class="mtext-105 cl2 js-name-detail p-b-14">
-                            Lightweight Jacket
-                        </h4>
-
-                        <span class="mtext-106 cl2">
-								$58.79
-							</span>
-
-                        <p class="stext-102 cl3 p-t-23">
-                            Nulla eget sem vitae eros pharetra viverra. Nam vitae luctus ligula. Mauris consequat ornare
-                            feugiat.
-                        </p>
-
-                        <!--  -->
-                        <div class="p-t-33">
-                            <div class="flex-w flex-r-m p-b-10">
-                                <div class="size-203 flex-c-m respon6">
-                                    Size
-                                </div>
-
-                                <div class="size-204 respon6-next">
-                                    <div class="rs1-select2 bor8 bg0">
-                                        <select class="js-select2" name="time">
-                                            <option>Choose an option</option>
-                                            <option>Size S</option>
-                                            <option>Size M</option>
-                                            <option>Size L</option>
-                                            <option>Size XL</option>
-                                        </select>
-                                        <div class="dropDownSelect2"></div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="flex-w flex-r-m p-b-10">
-                                <div class="size-203 flex-c-m respon6">
-                                    Color
-                                </div>
-
-                                <div class="size-204 respon6-next">
-                                    <div class="rs1-select2 bor8 bg0">
-                                        <select class="js-select2" name="time">
-                                            <option>Choose an option</option>
-                                            <option>Red</option>
-                                            <option>Blue</option>
-                                            <option>White</option>
-                                            <option>Grey</option>
-                                        </select>
-                                        <div class="dropDownSelect2"></div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="flex-w flex-r-m p-b-10">
-                                <div class="size-204 flex-w flex-m respon6-next">
-                                    <div class="wrap-num-product flex-w m-r-20 m-tb-10">
-                                        <div class="btn-num-product-down cl8 hov-btn3 trans-04 flex-c-m">
-                                            <i class="fs-16 zmdi zmdi-minus"></i>
-                                        </div>
-
-                                        <input class="mtext-104 cl3 txt-center num-product" type="number"
-                                               name="num-product" value="1">
-
-                                        <div class="btn-num-product-up cl8 hov-btn3 trans-04 flex-c-m">
-                                            <i class="fs-16 zmdi zmdi-plus"></i>
-                                        </div>
-                                    </div>
-
-                                    <button class="flex-c-m stext-101 cl0 size-101 bg1 bor1 hov-btn1 p-lr-15 trans-04 js-addcart-detail">
-                                        Add to cart
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div>Bình luận ở đây nhé</div>
-                    </div>
+                <div class="row">
+                    <div class="h3 ">Đánh giá</div>
 
                 </div>
             </div>
+            <hr>
+            <h1>SẢN PHẨM LIÊN QUAN</h1>
+            <div class="row">
+                <?= $html_splq ?>
+            </div>
+
         </div>
+
     </div>
-</div>
+
+
+    </div>
+</section>
+
