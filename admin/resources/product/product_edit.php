@@ -43,8 +43,8 @@ if (isset($_POST['btn_update'])) {
     }
 
 
-    if ($thoiThem > $thoiCapNhat) {
-        $error_real_update = "Thời gian thêm không` thể lớn hơn thời gian cập nhật.";
+    if ($thoiThem > $thoiCapNhat && !empty($created_at)) {
+        $error_real_update = "Thời gian thêm không thể lớn hơn thời gian cập nhật.";
     }
 
     if ($price_sale > $price) {

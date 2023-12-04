@@ -8,12 +8,16 @@ if (isset($_POST['btn_login'])) {
     $user = new user();
 
     if (empty($phone_number)) {
-        $error_phone_number = "Vui lòng điền tên đăng nhập";
+        $error_phone_number = "Vui lòng điền số điện thoại";
+    } elseif (!is_numeric($phone_number)) {
+        $error_phone_number = "Số điện thoại chỉ được chứa các ký tự số";
+    } elseif (strlen($phone_number) !== 10) {
+        $error_phone_number = "Số điện thoại phải có đúng 10 số";
     }
     if (empty($password)) {
         $error_pass = "Vui lòng điền mật khẩu";
     }
-    if (!isset($error_name) && !isset($error_pass)) {
+    if (!isset($error_phone_number) && !isset($error_pass)) {
         $checkuser = $user->checkUser($phone_number, $password);
         if ($checkuser) {
             extract($checkuser);
@@ -21,10 +25,10 @@ if (isset($_POST['btn_login'])) {
                 $_SESSION['admin'] = $checkuser;
                 header("Location:../index.php");
             } else {
-                $error_not_role = "Tên đăng nhập hoặc mật khẩu không đúngs";
+                $error_not_role = " Số điện thoại hoặc mật khẩu không đúngggg";
             }
         } else {
-            $error_not_account = "Tên đăng nhập hoặc mật khẩu không đúng";
+            $error_not_account = "Số điện thoại hoặc mật khẩu không đúng";
         }
     }
 

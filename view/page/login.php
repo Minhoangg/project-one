@@ -164,7 +164,7 @@ if (isset($_POST["btn_login"])) {
                             Bạn chưa có tài khoản?
                         </span>
 
-                        <a href="#" class="txt2 bo1">
+                        <a href="index.php?pages=register" class="txt2 bo1">
                             Đăng ký
                         </a>
                     </div>
