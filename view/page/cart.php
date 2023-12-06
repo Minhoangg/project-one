@@ -1,4 +1,4 @@
-<?php
+    <?php
 //thêm sản phẩm vào giỏ hàng
 $order = new  orders();
 $html_viewcart = $order->viewcart(1);
@@ -75,7 +75,7 @@ $tt = $tongDonHang - $giaTriVoucher;
                 <div class="col-lg-10 col-xl-7 m-lr-auto m-b-50">
                     <div class="m-l-25 m-r--38 m-lr-0-xl">
                         <div class="wrap-table-shopping-cart">
-                            <table class="table-shopping-cart p-3">
+                            <table class="table table-bordered table-hover table-responsive text-center p-3">
                                 <?= $html_viewcart ?>
 
                             </table>
@@ -121,7 +121,7 @@ $tt = $tongDonHang - $giaTriVoucher;
 								<span class="mtext-110 cl2">
 									<?php $tongDonHang;
                                      echo $tongDon=number_format($tongDonHang, 0, ",", ".");
-                                    ?> VND
+                                    ?>
 								</span>
                             </div>
                         </div>

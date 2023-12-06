@@ -4,11 +4,11 @@ $showgh = $order->viewcart(0);
 $tongDonHang = $order->tongDonHang($_SESSION['giohang']);
 //$td = $order->tongDonHang();
 
-if (isset($_SESSION['khach_hang'])) {
-    $ten_nguoi_nhan = $_SESSION['khach_hang']['ho_ten'];
-    $diachi_nguoinhan = $_SESSION['khach_hang']['dia_chi'];
-    $email_nguoinhan = $_SESSION['khach_hang']['email'];
-    $dienthoai_nguoinhan = $_SESSION['khach_hang']['sdt'];
+if (isset($_SESSION['user'])) {
+    $ten_nguoi_nhan = $_SESSION['user']['name'];
+    $diachi_nguoinhan = $_SESSION['user']['address'];
+    $email_nguoinhan = $_SESSION['user']['email'];
+    $dienthoai_nguoinhan = $_SESSION['user']['phone_number'];
 } else {
     $tbchuadangnhap = "Bạn chưa đăng nhập";
     $ten_nguoi_nhan = "";
@@ -26,9 +26,8 @@ if (isset($_SESSION['khach_hang'])) {
 
 <section class="container">
     <div class="container">
-        <form action="index.php?pg=xndonhang" method="post">
+        <form action="index.php?pages=commit" method="post">
             <div class="row">
-
                 <div class="col-8 viewcart">
                     <div class="ttdathang">
                         <h2>Thông tin người đặt hàng</h2>
@@ -77,53 +76,67 @@ if (isset($_SESSION['khach_hang'])) {
                     <!-- ket thuc show gio hang -->
 
                 </div>
-
                 <div class="col-4 ">
-                    <h2>ĐƠN HÀNG</h2>
-                    <div >
-                        <div class="boxcart mt-2">
-                            <?php
-                            //  var_Dump($_SESSION['giohang']);
-                            //  exit();
-                            foreach ($_SESSION['giohang'] as $sp) {
-                                echo '<span>Tên sản Phẩm: ' . $sp['0'] . '<br>  Số Lượng: ' . $sp['4'] . '</span>';
-                            }
-                            ?>
+                    <h2 class="text-center mb-3">ĐƠN HÀNG</h2>
+                    <?php
+                            foreach ($_SESSION['giohang'] as $sp):
+                    ?>
+                    <li class="list-group-item d-flex justify-content-between lh-condensed">
+                        <div>
+                            <h6 class="my-0"><?=$sp['0']?></h6>
+                            <small class="text-muted"><?=$sp['3'].' x '.$sp['4'];
 
-                            <h3 class="p-2">Tổng:
-                                <?php $tongDonHang;
-                                echo $tongDon=number_format($tongDonHang, 0, ",", ".");
-                                ?> VND
-                            </h3>
+                            ?></small>
                         </div>
-                    </div>
-
+                        <span class="text-muted"><?php  $get_price=$sp['3']* $sp['4'];
+                             echo number_format($get_price, 0, ",", ".")?></span>
+                    </li>
+                    <?php endforeach;?>
+                    <li class="list-group-item d-flex justify-content-between">
+                        <span>Tổng thành tiền</span>
+                        <strong><?php $tongDonHang;
+                            echo $tongDon=number_format($tongDonHang, 0, ",", ".");
+                            ?> VND</strong>
+                    </li>
                     <div class="coupon">
                         <div class="boxcart">
 <!--                            <h3>Vouche: </h3>-->
                         </div>
                     </div>
-                    <div class="pttt p-2">
-                        <div class="boxcart">
-                            <h3>Phương thức thanh toán: </h3>
-                            <input type="radio" name="pttt" value="0" id="" checked> Tiền mặt<br>
-                            <input type="radio" name="pttt" value="1" id=""> Chuyển khoản<br>
+                    <div class="pttt p-2 justify-content-center">
+                        <h3 class=text-center>Phương Thức Thanh Toán</h3>
 
-                        </div>
+                        <div class="ml-4">
+
+                            <div class="form-check ">
+                                <input class="form-check-input" type="radio" name="pttt" id="pttt" checked value="0">
+                                <label class="form-check-label" for="pttt">
+                                    <img class="how-itemcart1" src="../<?= $UPLOAD_URL ?>/upload/thanh-toan-truc-tuyen.jpg" > Thanh Toán Trực Tiếp
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="pttt" id="pttt" value="1">
+                                <label class="form-check-label" for="pttt">
+                                    <img class="how-itemcart1" src="<?= $UPLOAD_URL ?>/upload/vnpay.png" > Thanh Toán VNPAY
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="pttt" id="pttt" value="2">
+                                <label class="form-check-label" for="pttt">
+                                    <img class="how-itemcart1" src="<?= $UPLOAD_URL ?>/upload/paypay.png" > Thanh Toán PayPay
+                                </label>
+                            </div>
                     </div>
                     <div class="total">
                         <div class="boxcart bggray mt-3 mb-3">
-                            <h3>Tổng thanh toán:
+                            <h3>Tổng Tiền:
                                 <?php $tongDonHang;
                                 echo $tongDon=number_format($tongDonHang, 0, ",", ".");
                                 ?> VND
                             </h3>
                         </div>
                     </div>
-
                     <button class="flex-c-m stext-101 cl0 size-116 bg3 bor14 hov-btn3 p-lr-15 trans-04 pointer" type="submit" name = "hhthanhtoan">Thanh Toán</button>
-
-
                 </div>
             </div>
         </form>
