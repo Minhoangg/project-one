@@ -27,6 +27,11 @@ class comment
         $result = $db->pdo_execute($query);
         return $result;
     }
+    function binh_luan_insert($ma_kh, $ma_hh, $noi_dung, $ngay_bl){
+        $db = new connect();
+        $sql = "INSERT INTO comments(user_id, product_id, content, created_at) VALUES (?,?,?,?)";
+        $db->pdo_execute($sql, $ma_kh, $ma_hh, $noi_dung, $ngay_bl);
+    }
 
     public function selectcmt()
     {
@@ -52,5 +57,40 @@ class comment
         WHERE products.id='$productID'";
         $result = $db->pdo_query($select);
         return $result;
+    }
+    function showbl($dsbl)
+    {
+        $html_dsbl= '';
+        foreach ($dsbl as $bl) {
+
+            $html_dsbl .= '<div class="table  table-hover ">
+        
+       <tr> <td >'.$bl['hoten'].'</td>
+          <td>'.$bl['ngay_bl'].'</td><br></tr>
+        <tr> <img class="how-itemcart1" src="../uploaded/user/' .$bl['hinh']. '" alt="">
+          <td>Nội Dung: '.$bl['noidung'].'</td>
+        </tr>
+       
+      
+  
+    </div>';
+        }
+        return $html_dsbl;
+
+    }
+    function getAllComment($ma_hh)
+    {
+        $db = new connect();
+        $sql = "SELECT users.thumbnail
+     as hinh, users.name as hoten,
+      comments.content as noidung,
+       comments.created_at as ngay_bl 
+       FROM users 
+       JOIN comments
+        ON users.id = comments.user_id 
+        JOIN products ON 
+        products.id = comments.product_id 
+        WHERE products.id = $ma_hh";
+        return $db->pdo_query($sql, $ma_hh);
     }
 }
