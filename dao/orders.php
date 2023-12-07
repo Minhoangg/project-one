@@ -42,7 +42,7 @@ class orders
             $html_viewcart .= '
        
          <tr>
-                        <td class ="p-3">' .$i . '</td>
+                        <td class ="p-3">' . $i . '</td>
                         <td><img class="how-itemcart1" src="../../../uploaded/upload/'.$sp[2].'" ></td>
                         <td>' . $sp[0] . '</td>
                         <td>' . $sp[3] . '</td>
@@ -72,14 +72,15 @@ class orders
 
     function insert_order($user_id,$ten_nguoi_nhan, $diachi_nguoinhan, $email_nguoinhan, $dienthoai_nguoinhan, $ngaydh, $tongdh, $pttt)
     {   $db = new connect();
-       $sql = "INSERT INTO orders(user_id,customer_name, shipping_address, customer_email, customer_phone, updated_at, Total,payment_methods) VALUES (?,?,?,?,?,?,?,?)";
-        return $db->pdo_execute_return_lastID($sql,$user_id, $ten_nguoi_nhan, $diachi_nguoinhan, $email_nguoinhan, $dienthoai_nguoinhan, $ngaydh, $tongdh, $pttt);
+        $sql = "INSERT 
+     * Summary of hang_hoa_select_by_idINTO bill(ten_nguoi_nhan, diachi_nguoinhan, email_nguoinhan, dienthoai_nguoinhan, ngaydh, tongdh,pttt) VALUES (?,?,?,?,?,?,?)";
+        $db->pdo_execute_return_lastID($sql, $ten_nguoi_nhan, $diachi_nguoinhan, $email_nguoinhan, $dienthoai_nguoinhan, $ngaydh, $tongdh, $pttt);
     }
 
-    function insert_cart($ma_hh, $don_gia, $so_luong, $total, $idbill)
-    {  $db = new connect();
-        $sql = "INSERT INTO orders_detail(Product_id, price, qty, total,order_id) VALUES (?,?,?,?,?)";
-        $db->pdo_execute($sql, $ma_hh, $don_gia, $so_luong, $total, $idbill);
+    function insert_cart($ma_hh, $hinh, $hoten, $don_gia, $so_luong, $total, $idbill)
+    {
+        $sql = "INSERT INTO gio_hang(ma_hh, hinh, hoten, don_gia, so_luong, total,idbill) VALUES (?,?,?,?,?,?,?)";
+        pdo_execute($sql, $ma_hh, $hinh, $hoten, $don_gia, $so_luong, $total, $idbill);
     }
 
     /**
