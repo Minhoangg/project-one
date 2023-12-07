@@ -11,10 +11,12 @@ if (isset($_POST['btn_insert'])) {
         $error_name = 'Tên loại hàng đã tồn tại';
 
     }
-    else{
+    if (!isset($error) && !isset($error_name) ) {
         $cate->caterories_insert($name);
         header('location:index.php?pages=category&action=list');
-    } 
+    }
+
+
 }
 ?>
 
