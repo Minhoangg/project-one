@@ -6,7 +6,8 @@ class orders
     function viewcart($del)
     {
         $html_viewcart = '';
-        $i = 0;
+        $i = 1;
+        $count =0;
         if ($del == 1) {
             $xspth = '<th>Thao tác</th>';
         } else {
@@ -25,6 +26,8 @@ class orders
         </tr>                
 
     </thead>';
+
+
         foreach ($_SESSION['giohang'] as $sp) {
             // extract($sp);
             $tongtien = $sp[3] * $sp[4];
@@ -39,7 +42,7 @@ class orders
             $html_viewcart .= '
        
          <tr>
-                        <td class ="p-3">' .$i . '</td>
+                        <td class ="p-3">' . $i . '</td>
                         <td><img class="how-itemcart1" src="../../../uploaded/upload/'.$sp[2].'" ></td>
                         <td>' . $sp[0] . '</td>
                         <td>' . $sp[3] . '</td>
@@ -50,6 +53,7 @@ class orders
       </tr>
         ';
             $i++;
+            $count++;
 
         }
 
@@ -66,10 +70,11 @@ class orders
 
 
 
-    function insert_bill($user_id,$ten_nguoi_nhan, $diachi_nguoinhan, $email_nguoinhan, $dienthoai_nguoinhan, $ngaydh, $tongdh, $pttt)
+    function insert_order($user_id,$ten_nguoi_nhan, $diachi_nguoinhan, $email_nguoinhan, $dienthoai_nguoinhan, $ngaydh, $tongdh, $pttt)
     {   $db = new connect();
-       $sql = "INSERT INTO orders(user_id,customer_name, shipping_address, customer_email, customer_phone, updated_at, Total,payment_methods) VALUES (?,?,?,?,?,?,?,?)";
-        return $db->pdo_execute_return_lastID($sql,$user_id, $ten_nguoi_nhan, $diachi_nguoinhan, $email_nguoinhan, $dienthoai_nguoinhan, $ngaydh, $tongdh, $pttt);
+        $sql = "INSERT 
+     * Summary of hang_hoa_select_by_idINTO bill(ten_nguoi_nhan, diachi_nguoinhan, email_nguoinhan, dienthoai_nguoinhan, ngaydh, tongdh,pttt) VALUES (?,?,?,?,?,?,?)";
+        $db->pdo_execute_return_lastID($sql, $ten_nguoi_nhan, $diachi_nguoinhan, $email_nguoinhan, $dienthoai_nguoinhan, $ngaydh, $tongdh, $pttt);
     }
 
     function insert_cart($ma_hh, $hinh, $hoten, $don_gia, $so_luong, $total, $idbill)

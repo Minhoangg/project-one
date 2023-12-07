@@ -132,6 +132,7 @@ if (isset($_SESSION['user'])) {
                                 <?php $tongDonHang;
                                 echo $tongDon=number_format($tongDonHang, 0, ",", ".");
                                 ?> VND
+                                <input type="hidden" name="total" value="<?=$tongDonHang?>">
                             </h3>
                         </div>
                     </div>

@@ -71,7 +71,7 @@ if (isset($_POST['register'])) {
                 </div>
                 <div class="p-t-31 p-b-9">
                     <span>
-                        <p class='text-danger pb-2'><?php echo $loiemail ?? ''  ?></p>
+                        <p class='text-danger pb-2'><?php echo $error_email ?? ''  ?></p>
                     </span>
                     <span class="txt1">
                         Số điện thoại

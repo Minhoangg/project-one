@@ -27,7 +27,7 @@
                                 <td><?= $listcmt['content'] ?></td>
                                 <td><?= $listcmt['created_at'] ?></td>
                                 <td><?= $listcmt['name'] ?></td>
-                                <td class="text-end d-flex justify-content-around">
+                                <td>
                                     <a href="index.php?pages=comments&action=delete&id=<?= $listcmt['idcmt'] ?>"
                                        class="btn btn-outline-danger btn-rounded"><i class="fas fa-trash"></i></a>
                                 </td>

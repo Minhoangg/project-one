@@ -164,7 +164,7 @@ class Products
 //                $db = '';
 //            }
             $html_dssp .='
-                <div  class ="col-sm-6 col-md-4 col-lg-3 p-b-35 isotope-item">
+                <div  class =" p-b-35 isotope-item">
 				<div class="block2">
                    <div class="block2-pic hov-img0">
                          <div style="height:300px;">
