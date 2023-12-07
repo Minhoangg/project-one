@@ -74,7 +74,6 @@ if (isset($_SESSION['user'])) {
                         <? endif; ?>
                     </div>
                     <!-- ket thuc show gio hang -->
-
                 </div>
                 <div class="col-4 ">
                     <h2 class="text-center mb-3">ĐƠN HÀNG</h2>
@@ -111,19 +110,19 @@ if (isset($_SESSION['user'])) {
                             <div class="form-check ">
                                 <input class="form-check-input" type="radio" name="pttt" id="pttt" checked value="0">
                                 <label class="form-check-label" for="pttt">
-                                    <img class="how-itemcart1" src="../<?= $UPLOAD_URL ?>/upload/thanh-toan-truc-tuyen.jpg" > Thanh Toán Trực Tiếp
+                                    <img class="how-itemcart1" src="../<?= $UPLOAD_URL ?>/thanh-toan-truc-tuyen.jpg" > Thanh Toán Trực Tiếp
                                 </label>
                             </div>
                             <div class="form-check">
                                 <input class="form-check-input" type="radio" name="pttt" id="pttt" value="1">
                                 <label class="form-check-label" for="pttt">
-                                    <img class="how-itemcart1" src="<?= $UPLOAD_URL ?>/upload/vnpay.png" > Thanh Toán VNPAY
+                                    <img class="how-itemcart1" src="<?= $UPLOAD_URL ?>/vnpay.png" > Thanh Toán VNPAY
                                 </label>
                             </div>
                             <div class="form-check">
                                 <input class="form-check-input" type="radio" name="pttt" id="pttt" value="2">
                                 <label class="form-check-label" for="pttt">
-                                    <img class="how-itemcart1" src="<?= $UPLOAD_URL ?>/upload/paypay.png" > Thanh Toán PayPay
+                                    <img class="how-itemcart1" src="<?= $UPLOAD_URL ?>/paypay.png" > Thanh Toán PayPay
                                 </label>
                             </div>
                     </div>
