@@ -56,19 +56,19 @@ if (isset($_POST['btn_edit_info'])) {
                         </h5>
                         <div class="row mt-5">
                             <p class="col-sm-3 text-sm-right mb-0 mb-sm-3">Họ tên</p>
-                            <p class="col-sm-9"><?= $user['name'] ?></p>
+                            <p class="col-sm-9"><?= $select_order['customer_name'] ?></p>
                         </div>
                         <div class="row">
                             <p class="col-sm-3 text-sm-right mb-0 mb-sm-3">Số điện thoại</p>
-                            <p class="col-sm-9"><?= $user['phone_number'] ?></p>
+                            <p class="col-sm-9"><?= $select_order['shipping_address'] ?></p>
                         </div>
                         <div class="row">
                             <p class="col-sm-3 text-sm-right mb-0 mb-sm-3">Email</p>
-                            <p class="col-sm-9"><?= $user['email'] ?></p>
+                            <p class="col-sm-9"><?= $select_order['customer_email'] ?></p>
                         </div>
                         <div class="row">
                             <p class="col-sm-3 text-sm-right mb-0">Địa chỉ</p>
-                            <p class="col-sm-9 mb-0"><?= $user['address']  ?></p>
+                            <p class="col-sm-9 mb-0"><?= $select_order['shipping_address']  ?></p>
                         </div>
                         <div class="row m-3">
                             <p class="col-sm-3 text-sm-right mb-0">Trạng thái đơn hàng</p>

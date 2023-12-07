@@ -7,6 +7,7 @@ class orders
     {
         $html_viewcart = '';
         $i = 0;
+        $count =0;
         if ($del == 1) {
             $xspth = '<th>Thao tác</th>';
         } else {
@@ -25,6 +26,8 @@ class orders
         </tr>                
 
     </thead>';
+
+
         foreach ($_SESSION['giohang'] as $sp) {
             // extract($sp);
             $tongtien = $sp[3] * $sp[4];
@@ -50,6 +53,7 @@ class orders
       </tr>
         ';
             $i++;
+            $count++;
 
         }
 
@@ -66,16 +70,16 @@ class orders
 
 
 
-    function insert_bill($user_id,$ten_nguoi_nhan, $diachi_nguoinhan, $email_nguoinhan, $dienthoai_nguoinhan, $ngaydh, $tongdh, $pttt)
+    function insert_order($user_id,$ten_nguoi_nhan, $diachi_nguoinhan, $email_nguoinhan, $dienthoai_nguoinhan, $ngaydh, $tongdh, $pttt)
     {   $db = new connect();
        $sql = "INSERT INTO orders(user_id,customer_name, shipping_address, customer_email, customer_phone, updated_at, Total,payment_methods) VALUES (?,?,?,?,?,?,?,?)";
         return $db->pdo_execute_return_lastID($sql,$user_id, $ten_nguoi_nhan, $diachi_nguoinhan, $email_nguoinhan, $dienthoai_nguoinhan, $ngaydh, $tongdh, $pttt);
     }
 
-    function insert_cart($ma_hh, $hinh, $hoten, $don_gia, $so_luong, $total, $idbill)
-    {
-        $sql = "INSERT INTO gio_hang(ma_hh, hinh, hoten, don_gia, so_luong, total,idbill) VALUES (?,?,?,?,?,?,?)";
-        pdo_execute($sql, $ma_hh, $hinh, $hoten, $don_gia, $so_luong, $total, $idbill);
+    function insert_cart($ma_hh, $don_gia, $so_luong, $total, $idbill)
+    {  $db = new connect();
+        $sql = "INSERT INTO orders_detail(Product_id, price, qty, total,order_id) VALUES (?,?,?,?,?)";
+        $db->pdo_execute($sql, $ma_hh, $don_gia, $so_luong, $total, $idbill);
     }
 
     /**
