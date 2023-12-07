@@ -1,17 +1,19 @@
 <?php
-class caterories{
+class caterories
+{
 
     function caterories_insert($name)
     {
         $db = new connect();
         $query = "INSERT INTO caterories(name) VALUES(?)";
-        $db->pdo_execute($query,$name);
+        $db->pdo_execute($query, $name);
     }
     /**
      * Cập nhật tên loại
      */
-    function caterories_update($name,$id)
-    {   $db = new connect();
+    function caterories_update($name, $id)
+    {
+        $db = new connect();
         $query = "UPDATE caterories SET name=? WHERE id=?";
         $db->pdo_execute($query, $name, $id);
     }
@@ -22,7 +24,8 @@ class caterories{
      *
      */
     function caterories_delete($id)
-    {   $db = new connect();
+    {
+        $db = new connect();
         $query = "DELETE FROM caterories WHERE id=?";
         if (is_array($id)) {
             foreach ($id as $ma) {
@@ -38,12 +41,14 @@ class caterories{
      * @throws PDOException lỗi truy vấn
      */
     function caterories_select_all()
-    {   $db = new connect();
+    {
+        $db = new connect();
         $sql = "SELECT * FROM caterories";
         return $db->pdo_query($sql);
     }
     function caterories_select_all_desc()
-    {   $db = new connect();
+    {
+        $db = new connect();
         $sql = "SELECT * FROM caterories order by id desc";
         return $db->pdo_query($sql);
     }
@@ -52,17 +57,24 @@ class caterories{
 
      */
     function caterories_select_by_id($id)
-    {   $db = new connect();
+    {
+        $db = new connect();
         $sql = "SELECT * FROM caterories WHERE id=?";
         return $db->pdo_query_one($sql, $id);
     }
     /**
      * Kiểm tra sự tồn tại của một loại
      */
-    function loai_exist($ma_loai)
+    function loai_exist($name)
     {
-        $sql = "SELECT count(*) FROM loai WHERE ma_loai=?";
-        return pdo_query_value($sql, $ma_loai) > 0;
+        $db = new connect();
+        $sql = "SELECT * FROM caterories WHERE name = ? LIMIT 1";
+        $caterories = $db->pdo_query_one($sql, $name);
+        if ($caterories) {
+            return $caterories;
+        } else {
+            return null;
+        }
     }
 
     function showcate($dsdm)
@@ -72,8 +84,8 @@ class caterories{
                 </button></a>';
         foreach ($dsdm as $dm) {
             extract($dm);
-            $link = 'index.php?pages=shop&category_id='. $id;
-            $html_dm .= '<a class="mr-4" href = "'. $link . '">' . $name . '</a>';
+            $link = 'index.php?pages=shop&category_id=' . $id;
+            $html_dm .= '<a class="mr-4" href = "' . $link . '">' . $name . '</a>';
         }
         return $html_dm;
     }
