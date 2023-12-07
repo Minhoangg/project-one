@@ -29,6 +29,8 @@ include "./dao/user.php";
 include "./dao/caterories.php";
 include "./dao/product.php";
 include "./dao/orders.php";
+include "./dao/comment.php";
+
 
 
 if (isset($_GET['pages'])) {
@@ -69,6 +71,9 @@ switch ($pages) {
         break;
     case 'order':
         include './view/page/order.php';
+        break;
+    case 'commit':
+        include './view/page/commit_order.php';
         break;
     case 'product_detail':
         include './view/page/product-detail.php';

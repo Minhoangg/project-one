@@ -157,18 +157,18 @@ class Products
         foreach ($dssp as $sp) {
 
             extract($sp);
-//            $don_gia = number_format( $don_gia,0,',','.');
+            $price = number_format( $price,0,',','.');
 //            if ($dac_biet == 1) {
 //                $db = '<div class="best"></div>';
 //            } else {
 //                $db = '';
 //            }
             $html_dssp .='
-                <div class ="col-sm-6 col-md-4 col-lg-3 p-b-35 isotope-item">
+                <div  class ="col-sm-6 col-md-4 col-lg-3 p-b-35 isotope-item">
 				<div class="block2">
                    <div class="block2-pic hov-img0">
-                         <div>
-							<img src="../../../uploaded/upload/'.$product_thumbnail.'" alt="IMG-PRODUCT">
+                         <div style="height:300px;">
+							<img class="h-100" src="../../../uploaded/upload/'.$product_thumbnail.'" alt="IMG-PRODUCT">
 							<a href="index.php?pages=product_detail&id='.$id.'" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 ">
 								Chi tiết
 							</a>
@@ -179,7 +179,7 @@ class Products
 									'.$product_name.'
 								</a>
 								<span class="stext-105 cl3">
-									'.$price.'
+									'.$price.  '<sup>đ</sub>  
 								</span>
 							</div>
 

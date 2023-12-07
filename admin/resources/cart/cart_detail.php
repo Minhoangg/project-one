@@ -11,7 +11,7 @@ if(isset($_GET['id'])){
 
 
     //lấy dữ liệu sản phẩm
-   $pd=  $od->order_product_select($id_order);
+   $pd=$od->order_product_select($id_order);
 
     $selectOder=$od->selectorder($id_order);
 
