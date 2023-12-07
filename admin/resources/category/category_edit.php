@@ -8,11 +8,18 @@ $id = $_GET['id'];
 $getOneTB =$cata->caterories_select_by_id($id);
 //kiểm tra người dùng có click vào nút add hay không
 if (isset($_POST['capnhatlh'])) {
-    $name = $_POST['name'];
     $id = $_POST['malh'];
+    $name = $_POST['name'];
+    if (empty($name)) {
+        $error = "Tên loại không được để trống";
+    }else {
+        header('location:index.php?pages=category&action=list');
+    }
     $cata->caterories_update($name,$id);
-    header('location:index.php?pages=category&action=list');
+    
 }
+
+
 ?>
 <div class="container mt-5" >
     <div class="row">
@@ -30,12 +37,19 @@ if (isset($_POST['capnhatlh'])) {
                             <label for="name" class="form-label">TÊN LOẠI HÀNG</label>
                             <input type="text" name="name" id="name" class="form-control"
                                    value="<?= $getOneTB['name'] ?? ''; ?>">
+                                   <p id="ten_loai_error" style="color: red;">
+                                        <?php
+                                        if (isset($error)) {
+                                            echo $error;
+                                        }
+                                        ?>
+                                   </p>
                         </div>
                     </div>
                     <div class="row m-3 ">
                         <div class="col text-center">
                             <a href=""></a>
-                            <input class="btn btn-primary" type="submit" name="capnhatlh" value="cập nhật">
+                            <input class="btn btn-primary" type="submit" name="capnhatlh" value="Cập Nhật">
                             <a href=""><input class="btn btn-primary" type="reset" value="Nhập Lại"></a>
                             <a href="index.php?pages=category&action=list">
                                 <input class="btn btn-primary" type="button" value="Danh Sách">
