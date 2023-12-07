@@ -9,7 +9,6 @@ if (isset($_POST['register'])) {
     $passhash = password_hash($password, PASSWORD_DEFAULT);
     $infor_email = $user->selectByEmail($email);
     $infor_phone = $user->selectByphone($phone_number);
-    $check = $user->check($name, $email, $phone_number);
 
     if (isset($infor_email) && !empty($email)) {
         $error_email = 'Email đã tồn tại';
@@ -32,12 +31,12 @@ if (isset($_POST['register'])) {
     if (empty($password)) {
         $loimatkhau = 'Mật khẩu không được bỏ trống';
     }
-    if ($check) {
-        $loi = 'Tài khoản đã tồn tại';
-    } else {
-        $addusser = $user->khach_hang_insert($name, $email, $passhash, 1, 2, $phone_number, 'Cần Thơ');
-        header('location: index.php?pages=home ');
-    }
+  if(!isset($error_email) && !isset($error_phone) && !isset($loiten) && !isset($loiemail) && !isset($loisdt) && !isset($loidiachi) && !isset($loimatkhau)){
+      $addusser = $user->khach_hang_insert($name, $email, $passhash, 1, 0, $phone_number, 'Cần Thơ');
+      header('location: index.php?pages=home ');
+  }
+
+
 }
 
 ?>
@@ -55,7 +54,7 @@ if (isset($_POST['register'])) {
                     </span>
                 </div>
                 <div class="wrap-input100 validate-input" data-validate="Username is required">
-                    <input class="input100" type="text" name="username">
+                    <input class="input100" type="text" name="username" placeholder="Tên đăng nhập của bạn">
                     <span class="focus-input100"></span>
                 </div>
                 <div class="p-t-31 p-b-9">
@@ -67,7 +66,7 @@ if (isset($_POST['register'])) {
                     </span>
                 </div>
                 <div class="wrap-input100 validate-input" data-validate="Username is required">
-                    <input class="input100" type="text" name="email">
+                    <input class="input100" type="text" name="email" placeholder="Email của bạn">
                     <span class="focus-input100"></span>
                 </div>
                 <div class="p-t-31 p-b-9">
@@ -79,7 +78,7 @@ if (isset($_POST['register'])) {
                     </span>
                 </div>
                 <div class="wrap-input100 validate-input" data-validate="Username is required">
-                    <input class="input100" type="text" name="phone">
+                    <input class="input100" type="text" name="phone" placeholder="Số điện thoại của bạn">
                     <span class="focus-input100"></span>
                 </div>
                 <div class="p-t-31 p-b-9">
@@ -94,7 +93,7 @@ if (isset($_POST['register'])) {
                     </span>
                 </div>
                 <div class="wrap-input100 validate-input" data-validate="Username is required">
-                    <input class="input100" type="text" name="address">
+                    <input class="input100" type="text" name="address" placeholder="Địa chỉ của bạn">
                     <span class="focus-input100"></span>
                 </div>
                 <div class="p-t-13 p-b-9">
@@ -106,7 +105,7 @@ if (isset($_POST['register'])) {
                     </span>
                 </div>
                 <div class="wrap-input100 validate-input" data-validate="Password is required">
-                    <input class="input100" type="password" name="pass">
+                    <input class="input100" type="password" name="pass" placeholder="Mật khẩu của bạn">
                     <span class="focus-input100"></span>
                 </div>
                 <span>
@@ -125,7 +124,7 @@ if (isset($_POST['register'])) {
                         Bạn đã có tài khoản?
                     </span>
 
-                    <a href="#" class="txt2 bo1">
+                    <a href="index.php?pages=login" class="txt2 bo1">
                         Đăng nhập
                     </a>
                 </div>

@@ -55,8 +55,17 @@ switch ($pages) {
     case 'cart':
         include './view/page/cart.php';
         break;
+    case 'register':
+        include './view/page/register.php';
+        break;
     case 'login':
         include './view/page/login.php';
+        break;
+    case 'email_forgot':
+        include './view/page/email_forgot.php';
+        break;
+    case 'forgot-password':
+        include './view/page/forgot_pass.php';
         break;
     case 'order':
         include './view/page/order.php';

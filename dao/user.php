@@ -31,7 +31,6 @@ class user {
         } else {
             return null;
         }
-
     }
     function khach_hang_insert($name,$email,$password_hash,$thumbnail, $role,$phone_number,$address){
         $db = new connect();
@@ -55,6 +54,13 @@ class user {
         } else {
             return null;
         }
+    }
+
+    function updatePassByEmail($pass_new_hash, $email)
+    {
+        $db = new connect();
+        $query = "update users set password = '$pass_new_hash'  where  email ='$email'";
+        $db->pdo_execute($query);
     }
 
     public function updatePass($pass_new_hash, $id_user)

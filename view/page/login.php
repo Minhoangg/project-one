@@ -111,7 +111,7 @@ if (isset($_POST["btn_login"])) {
                     </span>
                 </div>
                 <div class="wrap-input100 validate-input" data-validate="Username is required">
-                    <input class="input100" type="text" name="username">
+                    <input class="input100" type="text" name="username" placeholder="Nhập số điện thoại của bạn">
                     <span class="focus-input100"></span>
                 </div>
                 <div class="w-100 p-t-13 p-b-9">
@@ -136,7 +136,7 @@ if (isset($_POST["btn_login"])) {
 
                 </div>
                 <div class="wrap-input100 validate-input" data-validate="Password is required">
-                    <input class="input100" type="password" name="pass">
+                    <input class="input100" type="password" name="pass" placeholder="Nhập mật khẩu của bạn">
                     <span class="focus-input100"></span>
                 </div>
                 <p style="color:red">
@@ -156,7 +156,7 @@ if (isset($_POST["btn_login"])) {
                         </button>
                     </div>
 
-                    <a href="#" class="txt2 bo1 m-l-5">
+                    <a href="index.php?pages=email_forgot" class="txt2 bo1 m-l-5">
                         Quên mật khẩu?
                     </a>
                     <div class="w-full text-center p-t-55">
