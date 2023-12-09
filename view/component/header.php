@@ -73,7 +73,7 @@
                                         <p>Thông tin</p>
                                         <span> > </span>
                                     </a>
-                                    <a href="" class="menu-link" >
+                                    <a href="index.php?pages=oderview" class="menu-link" >
                                         <i class="fa fa-building" aria-hidden="true"></i>
                                         <p>Đơn hàng</p>
                                         <span> > </span>

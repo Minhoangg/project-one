@@ -10,7 +10,7 @@ if (isset($_POST['hhthanhtoan'])) {
     $tongdh = ($_POST['total']);
     $pttt = $_POST['pttt'];
     if(isset($_SESSION['user'])){
-        $user_id = $_SESSION['user'][0];
+        $user_id = $_SESSION['user']['id'];
     }else{
         $user_id=0;
     }
@@ -22,19 +22,7 @@ if (isset($_POST['hhthanhtoan'])) {
     }
 //    $bill = bill_select_by_id($idbill);
     $_SESSION['giohang'] = [];
-
+header('location:index.php?pages=co');
 
 
 }?>
-
-<div class="containerfull">
-    <div class="bgbanner"></div>
-</div>
-
-<section class="containerfull">
-    <div class="container">
-
-        <h2 class="text-success">Cảm ơn quý khách  Đơn hàng đã đặt thành công. <br>
-        </h2>
-    </div>
-</section>

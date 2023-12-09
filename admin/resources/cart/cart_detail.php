@@ -125,14 +125,14 @@ if (isset($_POST['btn_edit_info'])) {
                                  height="70" alt="NoIMG">
                         </td>
                         <td>
-                            <?= number_format($hh['price'], 0, ",", ".") ?>
+                            <?= number_format($hh['price_sale'], 0, ",", ".") ?>
                         </td>
                         <td><?= $hh['soluong'] ?>
                         </td>
 
                         <td>
                             <?php
-                             $tt = $hh['soluong']*$hh['price'];
+                             $tt = $hh['soluong']*$hh['price_sale'];
                              echo $tong_tien=number_format($tt, 0, ",", ".");
                             ?>
 
