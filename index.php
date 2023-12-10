@@ -75,6 +75,18 @@ switch ($pages) {
     case 'commit':
         include './view/page/commit_order.php';
         break;
+    case 'co':
+        include './view/page/complete_order.php';
+        break;
+    case 'order_detail':
+        include './view/page/order_detail.php';
+        break;
+    case 'oderview':
+        include './view/page/order_view.php';
+        break;
+    case 'search':
+        include './view/page/search_order.php';
+        break;
     case 'product_detail':
         include './view/page/product-detail.php';
         break;
