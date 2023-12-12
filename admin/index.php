@@ -125,9 +125,6 @@ include '../global.php';
                     break;
                 case 'statis':
                     switch ($_GET['action']) {
-                        case 'list':
-                            include './resources/statistical/statistical.php';
-                            break;
                         case 'chart':
                             include './resources/statistical/chart.php';
                             break;

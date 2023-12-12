@@ -164,7 +164,7 @@ class Products
 //                $db = '';
 //            }
             $html_dssp .='
-                <div  class =" p-b-35 isotope-item">
+                <div  class =" p-b-35 isotope-item col-3">
 				<div class="block2">
                    <div class="block2-pic hov-img0">
                          <div style="height:300px;">
@@ -181,13 +181,6 @@ class Products
 								<span class="stext-105 cl3">
 									'.$price.  '<sup>đ</sub>  
 								</span>
-							</div>
-
-							<div class="block2-txt-child2 flex-r p-t-3">
-								<a href="#" class="btn-addwish-b2 dis-block pos-relative js-addwish-b2">
-									<img class="icon-heart1 dis-block trans-04" src="../content/contentCilent/images/icons/icon-heart-01.png" alt="ICON">
-									<img class="icon-heart2 dis-block trans-04 ab-t-l" src="../content/contentCilent/images/icons/icon-heart-02.png" alt="ICON">
-								</a>
 							</div>
 						</div>
 					</div>

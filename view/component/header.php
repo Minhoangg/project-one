@@ -68,11 +68,6 @@
                                         <h3><?=  $name ?></h3>
                                     </div>
                                     <hr>
-                                    <a href="" class="menu-link" >
-                                        <i class="fa fa-user" aria-hidden="true"></i>
-                                        <p>Thông tin</p>
-                                        <span> > </span>
-                                    </a>
                                     <a href="index.php?pages=oderview" class="menu-link" >
                                         <i class="fa fa-building" aria-hidden="true"></i>
                                         <p>Đơn hàng</p>

@@ -136,16 +136,12 @@ $html_dsbl = $cm->showbl($dsbl);
 
         </div>
         <hr>
-        <div><h3>SẢN PHẨM LIÊN QUAN</h3></div>
 
-        <div>
+
+        <div class="mt-4">
+            <div><h3>SẢN PHẨM LIÊN QUAN</h3></div>
             <?= $html_splq ?>
         </div>
-
-
-    </div>
-
-    </div>
 
 
     </div>

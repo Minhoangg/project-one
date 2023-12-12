@@ -5,7 +5,7 @@ if (isset($_SESSION['admin'])) {
 ?>
 <div class="header">
     <div class="header-left">
-        <a href="index.html" class="logo">  <span class="logoclass">CSS Store</span> </a>
+        <a href="index.php" class="logo">  <span class="logoclass">CSS Store</span> </a>
     </div>
     <a href="javascript:void(0);" id="toggle_btn"> <i class="fa-solid fa-bars"></i></a>
     <a class="mobile_btn " id="mobile_btn"> <i class="fa-solid fa-bars"></i> </a>

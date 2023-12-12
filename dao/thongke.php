@@ -1,8 +1,10 @@
 <?php
 
-class thongke{
+class thongke
+{
 
-    function thong_ke_binh_luan(){
+    function thong_ke_binh_luan()
+    {
         $db = new connect();
         $select = "SELECT products.id, products.product_name,
      COUNT(comments.content) as 'soluong',
@@ -14,7 +16,9 @@ class thongke{
         return $db->pdo_query($select);
 
     }
-    function thong_ke_san_pham(){
+
+    function thong_ke_san_pham()
+    {
         $db = new connect();
         $select = "SELECT COUNT(products.category_id) as countct,
         caterories.name as name , MIN(products.price) as minprice, 
@@ -26,8 +30,10 @@ class thongke{
         HAVING countct >0 ORDER BY `countct` DESC ";
         return $db->pdo_query($select);
     }
+
     function getDataChart()
-    {   $db = new connect();
+    {
+        $db = new connect();
         $select = "SELECT COUNT(products.category_id) as countct, 
     caterories.name as name
     FROM caterories 
@@ -37,7 +43,27 @@ class thongke{
         return $db->pdo_query($select);
     }
 
-
+    public function count_user()
+    {
+        $db = new connect();
+        $selectCount = "SELECT COUNT(*) as total FROM users";
+        $count = $db->pdo_query_one($selectCount);
+        return $count['total']; // Trả về giá trị 'total' từ mảng kết hợp
+    }
+    public function count_order()
+    {
+        $db = new connect();
+        $selectCount = "SELECT COUNT(*) as total FROM orders";
+        $count = $db->pdo_query_one($selectCount);
+        return $count['total']; // Trả về giá trị 'total' từ mảng kết hợp
+    }
+    public function count_product()
+    {
+        $db = new connect();
+        $selectCount = "SELECT COUNT(*) as total FROM products";
+        $count = $db->pdo_query_one($selectCount);
+        return $count['total']; // Trả về giá trị 'total' từ mảng kết hợp
+    }
 }
 
 ?>

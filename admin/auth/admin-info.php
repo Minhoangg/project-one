@@ -53,7 +53,7 @@ if (isset($_POST['btn_edit_pass'])) {
 
     $check_pass = $user->checkPass($id_user, $pass_old);
 
-    if (!isset($check_pass)) {
+    if (!isset($check_pass) && !empty($pass_old)) {
         $error_name_old_not = "Mật khẩu không đúng";
     }
     if ($pass_new != $pass_confirm) {
@@ -195,7 +195,7 @@ if (isset($_POST['btn_edit_pass'])) {
 
                                             <form method="post">
                                                 <div class="form-group">
-                                                    <label>Mật khẩu cũ</label>
+                                                    <label>Mật khẩu củ</label>
                                                     <div class="form-toggle-pass">
                                                         <input type="password" class="form-control" id="pass_old"
                                                                name="pass_old">
