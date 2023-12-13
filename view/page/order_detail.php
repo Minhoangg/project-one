@@ -7,8 +7,6 @@ if (isset($_GET['id'])) {
     $select_order = $od->order_select_by_id($id_order);
     $id_user = $select_order['User_id'];
     $user = $us->selectByID($id_user);
-
-
     //lấy dữ liệu sản phẩm
     $pd = $od->order_product_select($id_order);
 
@@ -113,7 +111,8 @@ if (isset($_POST['btn_edit_info'])) {
                         </tr>
                         </thead>
                         <tbody class=" table table-bordered bg-light">
-                        <?php foreach ($selectOder as $hh): ?>
+                        <?php foreach ($pd as $hh): ?>
+
 
                             <tr>
 
@@ -125,14 +124,14 @@ if (isset($_POST['btn_edit_info'])) {
                                          height="70" alt="NoIMG">
                                 </td>
                                 <td>
-                                    <?= number_format($hh['price_sale'], 0, ",", ".") ?>
+                                    <?= number_format($hh['price'], 0, ",", ".") ?>
                                 </td>
-                                <td><?= $hh['soluong'] ?>
+                                <td><?= $hh['qty'] ?>
                                 </td>
 
                                 <td>
                                     <?php
-                                    $tt = $hh['soluong'] * $hh['price_sale'];
+                                    $tt = $hh['qty'] * $hh['price'];
                                     echo $tong_tien = number_format($tt, 0, ",", ".");
                                     ?>
 
@@ -146,7 +145,10 @@ if (isset($_POST['btn_edit_info'])) {
                         <tfoot>
                         <tr>
                             <td colspan=6>
-                                Tổng tiền: <?= $od->tongDonHang($selectOder) ?>VND
+                                Tổng tiền: <?php
+                                $tt = $hh['qty'] * $hh['price'];
+                                echo $tong_tien = number_format($tt, 0, ",", ".");
+                                ?>VND
                             </td>
                         </tr>
                         </tfoot>
