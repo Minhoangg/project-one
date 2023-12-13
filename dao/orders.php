@@ -6,7 +6,7 @@ class orders
     function viewcart($del)
     {
         $html_viewcart = '';
-        $i = 1;
+        $i = 0;
         $count =0;
         if ($del == 1) {
             $xspth = '<th>Thao tác</th>';
